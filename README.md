@@ -126,6 +126,14 @@ Happy coding!
 
 ## Deployment Details
 
+The project was deployed using the Code Institute terminal for Heroku. In order to deploy I completed the following:
+
+* I cloned the Python / projext 3 repository
+* I created a new Heroku app
+* I set the buildbacks from the settings tab to Python and NodeJS
+* I linked tjhe Heroku app to my repository
+* I clicked on the deploy optiohn 
+
 ## Creating the Heroku app
 
 When you create the app, you will need to add two buildpacks from the _Settings_ tab. The ordering is as follows:
@@ -145,7 +153,11 @@ If you have credentials, such as in the Love Sandwiches project, you must create
 
 #### Python Validation
 
-
+## Testing 
+I have manually tested my project by completing the folling steps:
+* Run the code through the PEP8 linter and confirmed all errors were cleared.
+* Tested mulitple inputs to ensure only valid data is accepted, and errors thrown in appropritate situations
+* Tested in both my local terminal and the Code Institute Heroku Terminal to ensure testing is thorough.
 
 ## Error Log 
 The below  are issues I encountered over the course of this Python program development:
@@ -156,6 +168,16 @@ The below  are issues I encountered over the course of this Python program devel
 *
 *
 *
+
+## Solved Issues 
+## Remaining Bugs 
+
+## future Development
+This game is best suited as a multi-player game which would really enhance the user experience and emotional attachement to the game. This is something I plan on working on for future iterations.
+
+
+## Validation Testing
+* PEP8 - as per below picture there were no errros retured from https://PEP8online.com  
 
 ## Citations
 First and foremost a huge thank you to Martina my mentor who has been extremely helpful in all of my assignemnets, but in particular with the Python assignment.
