@@ -1,30 +1,29 @@
 ![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
 
++ [Game Workflow](#gameworkflow "Game Workflow")
 + [User Experience](#userexperience "User Experience")
-  + [User Stories](#user-stories "User Stories")
-  + [User Goals](#user-goals "User Goals")
-  + [Requirements](#requirements "Requirements")
-  + [Design](#design "Design")
-    + [Typography](#typography "Typography")
-    + [Common Features](#commonfeatures "Common Features")
++ [User Stories](#user-stories "User Stories")
++ [User Goals](#user-goals "User Goals")
++ [Requirements](#requirements "Requirements")
++ [Design](#design "Design")
 + [Accessibility](#accessability "Accessability")
-  + [Testing](#testing "Testing")
-    + [Functionality](#functionality "Functionality")
-    + [Styling](#styling "Styling")
-    + [Error Log](#errorlog "Error Log")
-    + [Python Validation](#pythonvalidation "Python Validation")
-    + [HTML Validation](#htmlvalidation "HTML Validation")
-
-  + [Citations](#citations "Citations")
++ [Deployment Details](#deployment-details "Accessability")
++ [Testing](#testing "Testing")
++ [Functionality](#functionality "Functionality")
++ [Error Log](#errorlog "Error Log")
++ [Python Validation](#pythonvalidation "Python Validation")
++ [HTML Validation](#htmlvalidation "HTML Validation")
++ [Citations](#citations "Citations")
 + [Lessons Learned](#lessons-learned “Lessons Learned")
 + [Quirks](#quirks "Quirks")
-  + [Future Features](#future-features "Future Features")
++ [Future Features](#future-features "Future Features")
 
-  ## Boggle Online - Assignment Purpose 
+  ## Boggle Online 
+  ##Assignment Purpose 
 
 I chose to reimagine the 90's game 'Boggle' which was a physical game with an 8x8 grid, before the timer starts one user would shake the boggle board, remove the lid and start the timer. It would then be on the players to doucment as many words as possible using the letters on the board that are either in a row, or diagnally in a row.
 
-The rules for playing Boggle are as follows:
+The rules for playing the original Boggle are as follows:
 * Each word should be of at least three letters.
 * Words that have the exact spelling but different meanings will be counted only once.
 * You cannot repeat any words.
@@ -35,7 +34,22 @@ The user with the most words then wins.
 
 I chose this game both  to keep up with my theme of 90's nostalgia, but also because I felt this would be an approoprirate game for deployment within this command line environment. 
 
+Boggle online will be true to it's 90's self with the same simplistic rules, the biggest difference will be that the computer will be in lieu of a real opponent, using the google API to r
 
+The live version of my project is available at the below link:
+
+## Game Workflow
+- The user is presented with  a simple name input field
+- The user is then asked if they want Help H, New Game N, High Score H
+- If the user hits H the game instructions populate the screen, with the options for High Score and New Game remaining.
+- If the user hits N the New Game Screen Displays - user must input their username which must contain 9 or less alphanumeric characters, special characters are not accepted.
+- When the User hits S for Start the board is presented to the screen with 4 x 4 grid containing letters
+- At this point the timer starts counting down from 1min 30 seconds
+- The user has this time to enter as many words as possible, they must contain at least 3 letters
+- The program will run the words entered by the user to confirm they are genuine words
+- The program will return the users score along with the username
+- The program will add this score and name to the High Score Array, if it is indeed a high score.
+- The user will be presented with the end game screen. 
 
 ## User Experience 
 
@@ -79,7 +93,7 @@ As part of Project 3 - python Computer Program Development, the following are re
 *  Demonstrate and document the development process through a version control system such as GitHub
 *  Deploy a command-line application
 
-## UX Design 
+## Design 
 
 #### User Control
 
@@ -99,14 +113,15 @@ As part of Project 3 - python Computer Program Development, the following are re
 * Robust code
 
 
-* Version Control Software - Git
+* Version Control Software - GGIT
 
 For this project I was very conscious that I used the version control software is effectively, per Code Institite / best practices:
 
-* all code  managed in git with commit messages that reflect the specific reason for the commit
+* All code  managed in git with commit messages that reflect the specific reason for the commit
 with is a separate, defined commit for each feature/fix
-there are no  large commits which make it harder to understand the development process and could lead the assessor to suspect plagiarism
+* There are no  large commits which make it harder to understand the development process and could lead the assessor to suspect plagiarism
 
+## Accessability 
 
 ## Reminders
 
@@ -131,7 +146,8 @@ The project was deployed using the Code Institute terminal for Heroku. In order 
 * I cloned the Python / projext 3 repository
 * I created a new Heroku app
 * I set the buildbacks from the settings tab to Python and NodeJS
-* I linked tjhe Heroku app to my repository
+* I created a config var called `PORT` and set this value to `8000`
+* I linked the Heroku app to my repository
 * I clicked on the deploy optiohn 
 
 ## Creating the Heroku app
@@ -160,7 +176,7 @@ I have manually tested my project by completing the folling steps:
 * Tested in both my local terminal and the Code Institute Heroku Terminal to ensure testing is thorough.
 
 ## Error Log 
-The below  are issues I encountered over the course of this Python program development:
+The below  are issues I encountered over the course of this Python computer program development:
 
 *
 *
@@ -170,9 +186,18 @@ The below  are issues I encountered over the course of this Python program devel
 *
 
 ## Solved Issues 
-## Remaining Bugs 
 
-## future Development
+*
+*
+*
+
+
+## Remaining Bugs 
+*
+*
+*
+
+## Future Development
 This game is best suited as a multi-player game which would really enhance the user experience and emotional attachement to the game. This is something I plan on working on for future iterations.
 
 
@@ -188,6 +213,7 @@ The tutor support was something I have become more comfortbale using, and the te
 
 #### TOC
 Taken from my last assignment with hints taken from the below website:
+
 
 #### Media 
 
