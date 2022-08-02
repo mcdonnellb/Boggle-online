@@ -1,25 +1,25 @@
 ![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
 
 + [Game Workflow](#gameworkflow "Game Workflow")
-+ [User Experience](#userexperience "User Experience")
-+ [User Stories](#user-stories "User Stories")
-+ [User Goals](#user-goals "User Goals")
+    + [User Experience](#userexperience "User Experience")
+    + [User Stories](#user-stories "User Stories")
+    + [User Goals](#user-goals "User Goals")
 + [Requirements](#requirements "Requirements")
 + [Design](#design "Design")
 + [Accessibility](#accessability "Accessability")
 + [Deployment Details](#deployment-details "Accessability")
 + [Testing](#testing "Testing")
-+ [Functionality](#functionality "Functionality")
-+ [Error Log](#errorlog "Error Log")
-+ [Python Validation](#pythonvalidation "Python Validation")
-+ [HTML Validation](#htmlvalidation "HTML Validation")
+    + [Functionality](#functionality "Functionality")
+    + [Error Log](#errorlog "Error Log")
+    + [Python Validation](#pythonvalidation "Python Validation")
+    + [HTML Validation](#htmlvalidation "HTML Validation")
 + [Citations](#citations "Citations")
 + [Lessons Learned](#lessons-learned “Lessons Learned")
 + [Quirks](#quirks "Quirks")
 + [Future Features](#future-features "Future Features")
 
-  ## Boggle Online 
-  ##Assignment Purpose 
+## Boggle Online 
+#### Assignment Purpose 
 
 I chose to reimagine the 90's game 'Boggle' which was a physical game with an 8x8 grid, before the timer starts one user would shake the boggle board, remove the lid and start the timer. It would then be on the players to doucment as many words as possible using the letters on the board that are either in a row, or diagnally in a row.
 
@@ -51,13 +51,13 @@ The live version of my project is available at the below link:
 - The program will add this score and name to the High Score Array, if it is indeed a high score.
 - The user will be presented with the end game screen. 
 
-## User Experience 
+#### User Experience 
 
 Critical Objectives:
 
-## User Stories
+#### User Stories
 
-## User Goals 
+#### User Goals 
 
 * End user Goal
 The application user wants to play a logic game
@@ -129,15 +129,10 @@ with is a separate, defined commit for each feature/fix
 * Your dependencies must be placed in the `requirements.txt` file
 * Do not edit any of the other files or your code may not deploy properly
 
-
-
-
 ## Constraints
 
 The deployment terminal is set to 80 columns by 24 rows. That means that each line of text needs to be 80 characters or less otherwise it will be wrapped onto a second line.
 
------
-Happy coding!
 
 ## Deployment Details
 
@@ -161,9 +156,7 @@ You must then create a _Config Var_ called `PORT`. Set this to `8000`
 
 If you have credentials, such as in the Love Sandwiches project, you must create another _Config Var_ called `CREDS` and paste the JSON into the value field.
 
-## Google API
-
-
+#### Google API
 
 
 
