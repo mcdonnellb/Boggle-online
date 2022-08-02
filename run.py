@@ -3,7 +3,7 @@
 # Write your code to expect a terminal of 80 characters wide and 24 rows high
 from random import randint
 
-scores = {"computer": 0, "plarer": 0}
+scores = {"computer": 0, "player": 0}
 
 class BoggleBoard: 
     """
@@ -19,18 +19,17 @@ class BoggleBoard:
         self.timer = 90
 
     def print(self):
-
-def new_game():
+    def new_game():
         
         """
             
-        This will start a new game. This sets the board size, resets the timer, the score and refreshes the letters on the board.
+        This will start a new game. This sets the board size, resets the timer and the score and refreshes the letters on the board.
             
         """
         size = 5
         scores["player"] = 0
         print("Welcome to Boggle Online")
-        print(f"Board Size: {size}"). Number of Letters: {}")
+        print(f" Board Size: {size}. Number of Letters: {num_letters}")
 
 
 
