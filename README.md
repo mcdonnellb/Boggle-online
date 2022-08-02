@@ -62,12 +62,15 @@ Project Purpose:
 
 In this project, Portfolio 3,  the requirment was to build a command-line application that allows your users to manage a common dataset about a particular domain.
 As part of Project 3 - python Computer Program Development, the following are required 
-* Python
+* Computer Program written in Python
 
 * Heroku app 
 
 * Google API (required to attain more than pass grade)
 
+* Use of a Data Model ( I used a class which ticked another project criteria which was for this to be Object Oriented)
+
+* Deployed using GIT
 
 #### Overall requirements of Assessment:
 
