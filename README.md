@@ -37,19 +37,7 @@ I chose this game both  to keep up with my theme of 90's nostalgia, but also bec
 Boggle online will be true to it's 90's self with the same simplistic rules, the biggest difference will be that the computer will be in lieu of a real opponent, using the google API to r
 
 The live version of my project is available at the below link:
-
-## Game Workflow
-- The user is presented with  a simple name input field
-- The user is then asked if they want Help H, New Game N, High Score H
-- If the user hits H the game instructions populate the screen, with the options for High Score and New Game remaining.
-- If the user hits N the New Game Screen Displays - user must input their username which must contain 9 or less alphanumeric characters, special characters are not accepted.
-- When the User hits S for Start the board is presented to the screen with 4 x 4 grid containing letters
-- At this point the timer starts counting down from 1min 30 seconds
-- The user has this time to enter as many words as possible, they must contain at least 3 letters
-- The program will run the words entered by the user to confirm they are genuine words
-- The program will return the users score along with the username
-- The program will add this score and name to the High Score Array, if it is indeed a high score.
-- The user will be presented with the end game screen. 
+https://www.heroku.com/ 
 
 #### User Experience 
 
@@ -92,6 +80,23 @@ As part of Project 3 - python Computer Program Development, the following are re
 *  Implement a data model, application features and business logic to manage, query and manipulate data to meet given needs in a particular real-world domain.
 *  Demonstrate and document the development process through a version control system such as GitHub
 *  Deploy a command-line application
+
+
+
+## Game Workflow
+- The user is presented with  a simple name input field
+- The user is then asked if they want Help H, New Game N, High Score H
+- If the user hits H the game instructions populate the screen, with the options for High Score and New Game remaining.
+- If the user hits N the New Game Screen Displays - user must input their username which must contain 9 or less alphanumeric characters, special characters are not accepted.
+- When the User hits S for Start the board is presented to the screen with 4 x 4 grid containing letters
+- At this point the timer starts counting down from 1min 30 seconds
+- The user has this time to enter as many words as possible, they must contain at least 3 letters
+- The program will run the words entered by the user to confirm they are genuine words
+- The program will return the users score along with the username
+- The program will add this score and name to the High Score Array, if it is indeed a high score.
+- The user will be presented with the end game screen. 
+
+
 
 ## Design 
 
