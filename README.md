@@ -132,9 +132,9 @@ I added the following to let the user know they had entered bad data:
 * Robust code
 
 
-* Version Control Software - GGIT
+* Version Control Software - GIT
 
-For this project I was very conscious that I used the version control software is effectively, per Code Institite / best practices:
+For this project I was very conscious that I used the version control software as effectively as possible, per Code Institite / best practices:
 
 * All code  managed in git with commit messages that reflect the specific reason for the commit
 with is a separate, defined commit for each feature/fix
@@ -193,9 +193,9 @@ I have manually tested my project by completing the folling steps:
 ## Error Log 
 The below  are issues I encountered over the course of this Python computer program development:
 
-* Authentication issue with Google Sheets API- I had accidentally configured an API Key which was why I could not access my Google Sheets spreadsheet and kept getting the below error:
+* Authentication issue with Google Sheets API- I had accidentally configured an API Key which was why I could not access my Google Sheets spreadsheet and kept getting the below error. As it transpired I also had a space in the file name which was not visible to the naked eye until you copy it and note the space, once the space was remove data was loaded without issue. 
     gspread.exceptions.SpreadsheetNotFound
-*
+* 
 *
 *
 *
