@@ -23,8 +23,8 @@ print(data)
 class BoggleBoard:
 
 
-"""
-Main Boggle Board class.
+            """
+            Main Boggle Board class.
             This sets the board size,
             the number of letters to the displayed.
             This boards displays the contdown and
