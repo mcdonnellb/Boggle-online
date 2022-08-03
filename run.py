@@ -32,6 +32,8 @@ class BoggleBoard:
         print(f" Board Size: {size}. Number of Letters: {num_letters}")
         player_name = input("Please choose your username: \n")
 
+        boggo
+
 
 
 new_game()

@@ -198,6 +198,13 @@ The below  are issues I encountered over the course of this Python computer prog
 *
 *
 
+## Quirks
+Next, in order for our input method to work  correctly in the deployed mock terminal,  
+we need to add a new line character at the  end of the text inside the input method.  
+This is due to an odd quirk in the software  we used to create the mock terminal.  
+Without this extra line, the text for the import  request will not show up in the terminal.   
+Any time you use the input method in your own project,  please keep this in mind when you come to deploy.
+
 ## Future Development
 This game is best suited as a multi-player game which would really enhance the user experience and emotional attachement to the game. This is something I plan on working on for future iterations.
 
