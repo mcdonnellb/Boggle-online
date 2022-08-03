@@ -14,7 +14,6 @@ SHEET = GSPREAD_CLIENT.open('love_sandwiches')
 
 sales = SHEET.worksheet('sales')
 
-scores = {"computer": 0, "player": 0}
 data = sales.get_all_values()
 
 print(data)
@@ -32,16 +31,16 @@ class BoggleBoard:
             """
 
 def __init__(self, size, num_letters, score, word_count):
-        self.size = size
-        self.num_letters = num_letters
-        self.score = score
-        self.word_count = word_count
-        self.high_score = []
-        self.timer = 90
-        print(self)
+self.size = size
+self.num_letters = num_letters
+self.score = score
+self.word_count = word_count
+self.high_score = []
+self.timer = 90
+print(self)
 
 def new_game():
-           
+        
 
     """
     This will start a new game.
