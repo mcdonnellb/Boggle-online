@@ -1,5 +1,6 @@
 ![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
 
+
 + [Game Workflow](#gameworkflow "Game Workflow")
     + [User Experience](#userexperience "User Experience")
     + [User Stories](#user-stories "User Stories")
@@ -109,6 +110,16 @@ As part of Project 3 - python Computer Program Development, the following are re
 
 #### Confirmation
 
+I added the following options to allow a user know that thier data is good:
+*
+*
+*
+
+I added the following to let the user know they had entered bad data: 
+*
+*
+*
+
 #### Development and Implementation
 * Readability
     How I kept my code as clean as possible and used started descriptive naming conventions
@@ -146,12 +157,15 @@ The deployment terminal is set to 80 columns by 24 rows. That means that each li
 
 The project was deployed using the Code Institute terminal for Heroku. In order to deploy I completed the following:
 
-* I cloned the Python / projext 3 repository
+* I cloned the Python / project 3 repository
+* I enabled Google Sheets API and Google Drive API
+* I created a service account and generated a creds.json file and added this to GIT
+* I added a line to gitignore so that the creds file would not be added to pushed with the commits for security reasons.
 * I created a new Heroku app
 * I set the buildbacks from the settings tab to Python and NodeJS
 * I created a config var called `PORT` and set this value to `8000`
 * I linked the Heroku app to my repository
-* I clicked on the deploy optiohn 
+* I clicked on the deploy option 
 
 ## Creating the Heroku app
 
@@ -179,7 +193,8 @@ I have manually tested my project by completing the folling steps:
 ## Error Log 
 The below  are issues I encountered over the course of this Python computer program development:
 
-*
+* Authentication issue with Google Sheets API- I had accidentally configured an API Key which was why I could not access my Google Sheets spreadsheet and kept getting the below error:
+    gspread.exceptions.SpreadsheetNotFound
 *
 *
 *
@@ -188,7 +203,7 @@ The below  are issues I encountered over the course of this Python computer prog
 
 ## Solved Issues 
 
-*
+* Authnetication issue with 
 *
 *
 
@@ -217,7 +232,7 @@ First and foremost a huge thank you to Martina my mentor who has been extremely 
 
 Kasia Bogucka, the course cohort leader who has been filling the cohort with confidence even on our bad days when we are struggling with our code, we end up leaaving our meeetings with a smile and a renewed positivity that we can achieve our goals.
 
-The tutor support was something I have become more comfortbale using, and the team are really fantastic at their job. It is not a case of giving you the answer buy making you think ciritcally about the issue you are facing, and core concepts that you covered over the course of the online content.
+The tutor support was something I have become more comfortbale using, and the team are really fantastic at their job. It is not a case of giving you the answer. By making you think ciritcally about the issue you are facing, you are steered back to core concepts that you covered over the course of the online content. Massive thank you to all at Code Institute for thier patience and can do attitude, inspiring us all to keep going.
 
 #### TOC
 Taken from my last assignment with hints taken from the below website:
@@ -225,5 +240,14 @@ Taken from my last assignment with hints taken from the below website:
 
 #### Media 
 
+
+## Inspiritation
+I relied heavily on the experience gained from the Love Sandwiches Project and used this as my basis for creating my application. I also sought inspiration from the battleships example given by Code Institute in terms of the logic used to create the application.
+
+#### Websites:
+*
+*
+*
+*
 
 #### 

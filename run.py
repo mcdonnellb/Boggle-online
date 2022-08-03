@@ -21,9 +21,7 @@ print(data)
 
 
 class BoggleBoard:
-
-
-            """
+      """
             Main Boggle Board class.
             This sets the board size,
             the number of letters to the displayed.
@@ -44,11 +42,13 @@ def __init__(self, size, num_letters, score, word_count):
 
 def new_game():
            
+
     """
     This will start a new game.
     This sets the board size,
     resets the timer and the score
     and refreshes the letters on the board.
+   
     """
 size = 5
 num_letters = 16
