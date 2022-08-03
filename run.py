@@ -1,6 +1,3 @@
-# Your code goes here.
-# You can delete these comments, but do not change the name of this file
-# Write your code to expect a terminal of 80 characters wide and 24 rows high
 import gspread
 from google.oauth2.service_account import Credentials
 
@@ -21,9 +18,13 @@ scores = {"computer": 0, "player": 0}
 data = sales.get_all_values()
 
 print(data)
+
+
 class BoggleBoard:
-            """
-            Main Boggle Board class.
+
+
+"""
+Main Boggle Board class.
             This sets the board size,
             the number of letters to the displayed.
             This boards displays the contdown and
@@ -31,7 +32,6 @@ class BoggleBoard:
             input and validate against dictionary
             to award points for valid word entry only
             """
-
 
 def __init__(self, size, num_letters, score, word_count):
         self.size = size
@@ -43,15 +43,17 @@ def __init__(self, size, num_letters, score, word_count):
         print(self)
 
 def new_game():
-            """
-            This will start a new game.
-            This sets the board size,
-            resets the timer and the score
-            and refreshes the letters on the board.
-            """
-            size = 5
-            scores["player"] = 0
-            print("Welcome to Boggle Online")
-            print(f" Board Size: {size}. Number of Letters: {num_letters}")
-            player_name = input("Please choose your username: \n")
+           
+    """
+    This will start a new game.
+    This sets the board size,
+    resets the timer and the score
+    and refreshes the letters on the board.
+    """
+size = 5
+num_letters = 16
+scores["player"] = 0
+print("Welcome to Boggle Online")
+print(f" Board Size: {size}. Number of Letters: {num_letters}")
+player_name = input("Please choose your username: \n")
 new_game()
