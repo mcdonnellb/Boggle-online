@@ -2,6 +2,7 @@
 import constants
 import gspread
 from google.oauth2.service_account import Credentials
+import random
 
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
@@ -43,6 +44,34 @@ def __init__(self, size, num_letters, score, word_count):
     self.timer = 90
     print(self)
 
+
+def generate_board():
+    """
+    This will generate the 
+    new random characters on the 
+    board.
+    """
+board_selection = SHEET.worksheet('letters')
+board_selection_data = board_selection.get_all_values()
+gen_random_sixteen = random.choices(board_selection)
+print(gen_random_sixteen)
+words_entered = input("Enter your words here")
+
+
+def points_calculation(word):
+    if len(word) == 3:
+        return 1
+    if len(word) == 5:
+        return 2
+    if len(word) == 6:
+        return 3
+    if len(word) == 7:
+        return 11
+    if len(word) >= 8:
+        return 11
+    return 0
+
+
 def new_game():
     """
     This will start a new game.
@@ -55,16 +84,24 @@ def new_game():
 SIZE = 5
 
 NUM_LETTERS = 16
-# scores["player"] = 0
+score = 0
+
+print(constants.WELCOME1)
+print(constants.WELCOME2)
+print("Can you find words on our online Boggle board?")
+print("If you get a high score you will be added to our Boggle Hall of fame")
+print("Until someone beats your score that is!!")
 print(f" Board Size: {SIZE}. Number of Letters: {NUM_LETTERS}")
 player_name = input("Please choose your username: \n")
-new_game()
+print("{player_name {words entered}")
+generateBoard()
+#new_game()
 # print(high_score_data)
 
 
 def welcome_screen():
     """
-    This is the landing screen 
+    This is the landing screen
     when the program is first
     run and will be the main
     page for nav purposes
@@ -80,7 +117,7 @@ print("++++ || For Help please hit the H Key      || ++++")
 print("++++ || For Scoreboard please hit the S Key|| ++++")
 print("++++ || To start a game hit Enter Key      || ++++")
 
-player_selection = input("Please select Option H, S or Enter: \n")
+#player_selection = input("Please select Option H, S or Enter: \n")
 
 new_game()
 # code taken from www.codegrepper.com noted in readme
