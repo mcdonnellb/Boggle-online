@@ -1,4 +1,4 @@
-import keyboard
+
 import constants
 import gspread
 from google.oauth2.service_account import Credentials
@@ -64,39 +64,55 @@ print("++++ || For Scoreboard please hit the S Key|| ++++")
 print("++++ || To start a game hit Enter Key      || ++++")
 
 player_selection = input("Please select Option H, S or Enter: \n")
-# code taken from www.codegrepper.com nored in readme
-while True:  # making a loop
-    try:  
-        if keyboard.is_pressed('enter'):  # if key 'q' is pressed
-            print('You Pressed Enter !')
-        elif keyboard.is_pressed('s'):
-            print(constants.SCOREBOARD)
-            # break  # finishing the loop
-            print(high_score_data)
-        elif keyboard.is_pressed('h'):
-            print(constants.INSTRUCTIONS)
-            print("++++ || Boggle will generate 16 char grid || ++++")
-            print("++++ || Your goal is to form words        || ++++")
-            print("++++ || They must be atleast 3 chars long || ++++")
-            print("++++ || You have 90 seconds on the clock  || ++++")
-            print("++++ || QU will count as two letters      || ++++")
-            print("++++ || A 3-letter word earns you 1 point || ++++")
-            print("++++ || A 5-letter word earns you 2 points|| ++++")
-            print("++++ || A 6-letter word earns you 3 points|| ++++")
-            print("++++ || A 7-letter word earns you 5 points|| ++++")
-            print("++++ || 8+ letters earns you 11 points    || ++++")
-    except:
-        
-        break 
-    
-        print(constants.WELCOME1)
-        print(constants.WELCOME2)
-        print("++++ || You hit the wrong key        || ++++")
-        print("++++ || Choose Enter to start a game || ++++")
-        print("++++ || Choose S to view Scoreboard  || ++++")
-        print("++++ || Choose H for Help            ||  ++++")
+# code taken from www.codegrepper.com noted in readme
+#https://stackoverflow.com/questions/24072790/how-to-detect-key-presses
 
-    welcome_screen()
+user_input = input().upper()
+if user_input == "Y":
+    print('You Pressed Enter !')
+    #welcome_screen()
+
+
+#elif user_input == "H":
+ #   print("You selected help\n")
+else:
+    print(constants.INPUT_ERROR)
+    print(constants.INPUT_ERROR2)
+    print(constants.INPUT_ERROR3)
+    print(constants.WELCOME1)
+    print(constants.WELCOME2)
+    print("++++ || You hit the wrong key        || ++++")
+    print("++++ || Choose Enter to start a game || ++++")
+    print("++++ || Choose S to view Scoreboard  || ++++")
+    print("++++ || Choose H for Help            || ++++")
+    player_selection = input("Please select Option H, S or Enter: \n")
+   # elif keyboard.is_pressed('s'):
+    #        print(constants.SCOREBOARD)
+     #       # break  # finishing the loop
+      #      print(high_score_data)
+       # elif keyboard.is_pressed('h'):
+        #    print(constants.INSTRUCTIONS)
+         #   print("++++ || Boggle will generate 16 char grid || ++++")
+          #  print("++++ || Your goal is to form words        || ++++")
+           # print("++++ || They must be atleast 3 chars long || ++++")
+            # print("++++ || You have 90 seconds on the clock  || ++++")
+            # print("++++ || QU will count as two letters      || ++++")
+            #print("++++ || A 3-letter word earns you 1 point || ++++")
+            #print("++++ || A 5-letter word earns you 2 points|| ++++")
+            #print("++++ || A 6-letter word earns you 3 points|| ++++")
+            #print("++++ || A 7-letter word earns you 5 points|| ++++")
+            #print("++++ || 8+ letters earns you 11 points    || ++++")
+        
+        #break
+
+
+
+        
+        # print(constants.WELCOME1)
+        #print(constants.WELCOME2)
+    
+
+    #welcome_screen()
 
 
 def new_game():
