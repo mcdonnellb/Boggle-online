@@ -20,7 +20,6 @@ high_score_data = high_score.get_all_values()
 
 data = sales.get_all_values()
 
-print(data)
 
 
 class BoggleBoard:
@@ -44,13 +43,31 @@ def __init__(self, size, num_letters, score, word_count):
     self.timer = 90
     print(self)
 
-
-def welcome_screen():
+def new_game():
     """
     This will start a new game.
     This sets the board size,
     resets the timer and the score
     and refreshes the letters on the board.
+    """
+
+
+SIZE = 5
+
+NUM_LETTERS = 16
+# scores["player"] = 0
+print(f" Board Size: {SIZE}. Number of Letters: {NUM_LETTERS}")
+player_name = input("Please choose your username: \n")
+new_game()
+# print(high_score_data)
+
+
+def welcome_screen():
+    """
+    This is the landing screen 
+    when the program is first
+    run and will be the main
+    page for nav purposes
     """
 
 
@@ -64,18 +81,27 @@ print("++++ || For Scoreboard please hit the S Key|| ++++")
 print("++++ || To start a game hit Enter Key      || ++++")
 
 player_selection = input("Please select Option H, S or Enter: \n")
+
+new_game()
 # code taken from www.codegrepper.com noted in readme
 #https://stackoverflow.com/questions/24072790/how-to-detect-key-presses
 
-user_input = input().upper()
-if user_input == "Y":
-    print('You Pressed Enter !')
-    #welcome_screen()
+#user_input = input()
+#options = ("H", "S", "E")
+#if user_input == "E":
+ #   print("You Pressed Enter !/n")
+  #  welcome_screen()
+#if user_input not in options:
+ #   print("uh oh")
+  #  error_in_selection()
 
 
-#elif user_input == "H":
- #   print("You selected help\n")
-else:
+def error_in_selection():
+    """
+    This is to simplify code for selection error.
+    user should only be able to select H, S or E
+    for Menu to function
+    """
     print(constants.INPUT_ERROR)
     print(constants.INPUT_ERROR2)
     print(constants.INPUT_ERROR3)
