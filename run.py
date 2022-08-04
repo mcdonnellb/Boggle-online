@@ -1,3 +1,4 @@
+import keyboard
 import constants
 import gspread
 from google.oauth2.service_account import Credentials
@@ -53,17 +54,43 @@ def welcome_screen():
     """
 
 
-print(constants.WELCOME)
+print(constants.WELCOME1)
+print(constants.WELCOME2)
 print("Can you find words on our online Boggle board?")
 print("If you get a high score you will be added to our Boggle Hall of fame")
 print("Until someone beats your score that is!!")
-print("++++ ||For Help please hit the H Key      || ++++")
-print("++++ ||For Scoreboard please hit the S Key|| ++++")
-print("++++ ||To start a game hit Enter Key      || ++++")
+print("++++ || For Help please hit the H Key      || ++++")
+print("++++ || For Scoreboard please hit the S Key|| ++++")
+print("++++ || To start a game hit Enter Key      || ++++")
 
 player_selection = input("Please select Option H, S or Enter: \n")
+# code taken from www.codegrepper.com nored in readme
+while True:  # making a loop
+    try:  
+        if keyboard.is_pressed('enter'):  # if key 'q' is pressed
+            print('You Pressed Enter !')
+        elif keyboard.is_pressed('s'):
+            print(constants.SCOREBOARD)
+            # break  # finishing the loop
+            print(high_score_data)
+        elif keyboard.is_pressed('h'):
+            print(constants.INSTRUCTIONS)
+            print("Boggle will generate a board with 16 characters")
+            print("You must construct from characters in a row")
+            print("They must be atleast 3 chars long")
+            print("You will have 90 seconds to capture as many as possible")
+    except:
+        
+        break 
+    
+        print(constants.WELCOME1)
+        print(constants.WELCOME2)
+        print("++++ || You hit the wrong key        || ++++")
+        print("++++ || Choose Enter to start a game || ++++")
+        print("++++ || Choose S to view Scoreboard  || ++++")
+        print("++++ || Choose H for Help            ||  ++++")
 
-welcome_screen()
+    welcome_screen()
 
 
 def new_game():
