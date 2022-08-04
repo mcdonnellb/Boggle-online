@@ -105,18 +105,21 @@ As part of Project 3 - python Computer Program Development, the following are re
 ## Design 
 
 #### User Control
+*
+*
+*
 
 #### Consistency
 
 #### Confirmation
 
 I added the following options to allow a user know that thier data is good:
-*
+*Print Messages following on from data input
 *
 *
 
 I added the following to let the user know they had entered bad data: 
-*
+* Print Message outlining what the issue is and what is expected 
 *
 *
 
@@ -157,11 +160,11 @@ The deployment terminal is set to 80 columns by 24 rows. That means that each li
 
 The project was deployed using the Code Institute terminal for Heroku. In order to deploy I completed the following:
 
-* I cloned the Python / project 3 repository
+* I cloned the Python / project 3 repository and renamed / saved into my own GitHub repository.
 * I enabled Google Sheets API and Google Drive API
-* I created a service account and generated a creds.json file and added this to GIT
+* I created a service account and generated a creds.json file and added this to Gitpod
 * I added a line to gitignore so that the creds file would not be added to pushed with the commits for security reasons.
-* I created a new Heroku app
+* I created a new Heroku app with region set to Europe
 * I set the buildbacks from the settings tab to Python and NodeJS
 * I created a config var called `PORT` and set this value to `8000`
 * I linked the Heroku app to my repository
@@ -179,7 +182,7 @@ You must then create a _Config Var_ called `PORT`. Set this to `8000`
 If you have credentials, such as in the Love Sandwiches project, you must create another _Config Var_ called `CREDS` and paste the JSON into the value field.
 
 #### Google API
-
+i took inspiration from the Love Sandwiches project and decided to use a similar apporach to my computer Program, using Google Sheets to store data/ add data/ query data.
 
 
 #### Python Validation
@@ -195,7 +198,9 @@ The below  are issues I encountered over the course of this Python computer prog
 
 * Authentication issue with Google Sheets API- I had accidentally configured an API Key which was why I could not access my Google Sheets spreadsheet and kept getting the below error. As it transpired I also had a space in the file name which was not visible to the naked eye until you copy it and note the space, once the space was remove data was loaded without issue. 
     gspread.exceptions.SpreadsheetNotFound
-* 
+* In order for input methods to work  correctly in the deployed mock terminal,  
+I added a new line character at the  end of the text inside the input method.  
+Without this extra line, the text for the import  request will not show up in the terminal.   
 *
 *
 *
@@ -203,7 +208,7 @@ The below  are issues I encountered over the course of this Python computer prog
 
 ## Solved Issues 
 
-* Authnetication issue with 
+* 
 *
 *
 
@@ -214,11 +219,8 @@ The below  are issues I encountered over the course of this Python computer prog
 *
 
 ## Quirks
-Next, in order for our input method to work  correctly in the deployed mock terminal,  
-we need to add a new line character at the  end of the text inside the input method.  
-This is due to an odd quirk in the software  we used to create the mock terminal.  
-Without this extra line, the text for the import  request will not show up in the terminal.   
-Any time you use the input method in your own project,  please keep this in mind when you come to deploy.
+  
+
 
 ## Future Development
 This game is best suited as a multi-player game which would really enhance the user experience and emotional attachement to the game. This is something I plan on working on for future iterations.
@@ -245,9 +247,13 @@ Taken from my last assignment with hints taken from the below website:
 I relied heavily on the experience gained from the Love Sandwiches Project and used this as my basis for creating my application. I also sought inspiration from the battleships example given by Code Institute in terms of the logic used to create the application.
 
 #### Websites:
-*
-*
-*
+* I used the below website to generate fun grpahics to enhance the aesthetics of the game and improve UX usability 
+    https://fsymbols.com/generators/carty/   
+* I used the following Cheat Sheet to help me with my readme file:
+    https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet
+* I sought some inspiration from the following links to help me decide on the best approach for my program:
+    https://www.freecodecamp.org/news/how-to-build-a-wordle-clone-using-python-and-rich/
+    
 *
 
 #### 
