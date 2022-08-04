@@ -75,10 +75,16 @@ while True:  # making a loop
             print(high_score_data)
         elif keyboard.is_pressed('h'):
             print(constants.INSTRUCTIONS)
-            print("Boggle will generate a board with 16 characters")
-            print("You must construct from characters in a row")
-            print("They must be atleast 3 chars long")
-            print("You will have 90 seconds to capture as many as possible")
+            print("++++ || Boggle will generate 16 char grid || ++++")
+            print("++++ || Your goal is to form words        || ++++")
+            print("++++ || They must be atleast 3 chars long || ++++")
+            print("++++ || You have 90 seconds on the clock  || ++++")
+            print("++++ || QU will count as two letters      || ++++")
+            print("++++ || A 3-letter word earns you 1 point || ++++")
+            print("++++ || A 5-letter word earns you 2 points|| ++++")
+            print("++++ || A 6-letter word earns you 3 points|| ++++")
+            print("++++ || A 7-letter word earns you 5 points|| ++++")
+            print("++++ || 8+ letters earns you 11 points    || ++++")
     except:
         
         break 
