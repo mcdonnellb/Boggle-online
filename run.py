@@ -53,7 +53,13 @@ def welcome_screen():
     """
 
 
-print('\n' constants.WELCOME '\n')
+print(constants.WELCOME)
+print("Can you find words on our online Boggle board?")
+print("If you get a high score you will be added to our Boggle Hall of fame")
+print("Until someone beats your score that is!!")
+print("++++ ||For Help please hit the H Key      || ++++")
+print("++++ ||For Scoreboard please hit the S Key|| ++++")
+print("++++ ||To start a game hit Enter Key      || ++++")
 
 player_selection = input("Please select Option H, S or Enter: \n")
 
