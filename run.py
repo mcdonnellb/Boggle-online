@@ -33,10 +33,10 @@ def welcome_screen():
     USER_NAME = input(" Enter username:")
     attempts = 0
     print("Let's go " + USER_NAME + '!')
-    grid = []
+grid = []
         for i in range(4):
-            grid.append(random.choices(board_selection, k=6))
-            print (grid[i])
+        grid.append(random.choices(board_selection, k=6))
+        print (grid[i])
 
     words_entered = input("Enter your words here: ")
    
