@@ -21,7 +21,7 @@ high_score_data = high_score.get_all_values()
 gridl= []
 grid = []
 
-#def end_game():
+def end_game():
    
     #"""
     #This function is to 
@@ -35,11 +35,13 @@ grid = []
     #which will then be pushed 
     #to the google sheet
     #"""
-#print(constants.TIME_IS_UP1)
-#print(constants.TIME_IS_UP2)
-#print(constants.TIME_IS_UP3)
-#points_calculation()
-#check_if_high_score()
+    print(constants.TIME_IS_UP1)
+    print(constants.TIME_IS_UP2)
+    print(constants.TIME_IS_UP3)
+    #points_calculation()
+    print("Calculating your ponts....")
+    #check_if_high_score()
+    print("Checking to see if you have reached a high score")
 
 def show_banner_screen():
 
@@ -104,7 +106,8 @@ for i in range(4):
 
 words_entered = input("Enter your words here: ")
 countdown(90)
-#end_game()
+if countdown == 0:
+    end_game()
 
 #function to calculate the points achieved in the course of the game
 def points_calculation(words_entered):
@@ -122,9 +125,11 @@ def points_calculation(words_entered):
 
 #def check_if_high_score(score):
    # if score > 
+    current_scores = SHEET.worksheet("scores").get_all_values()
+      current_scores_row = scores[-1]
 
     print(f"Updating {worksheet} worksheet...\n")
-    worksheet_to_update = SHEET.worksheet(worksheet)
+    worksheet_to_update = SHEET.worksheet(scores)
     worksheet_to_update.append_row(data)
     print(f"{worksheet} ScoreBoard updated successfully\n")
 

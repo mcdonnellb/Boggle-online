@@ -97,21 +97,17 @@ I opted for bold ASCII art to try and enhance the appearance of my application. 
 
 #### User Control
 * simplfied menu options to ensure user has ease of navigation through program
-*
-*
 
-#### Consistency
 
 #### Confirmation
 
 I added the following options to allow a user know that their data is good:
 * Print confirmation Messages following on from data input 
-*
-*
+* I added a simple banner menu to reiterate the options to users and simplify UI / reduce risk of losing track of screen options
 
 I added the following to let the user know they had entered bad data: 
 * Print Message outlining what the issue is and what is expected 
-*
+* 
 
 #### Development and Implementation
 
@@ -151,30 +147,28 @@ The below  are issues I encountered over the course of this Python computer prog
 * In order for input methods to work  correctly in the deployed mock terminal,  
 I added a new line character at the  end of the text inside the input method.  
 Without this extra line, the text for the import  request will not show up in the terminal.   
-* I got the initial gspread error when the code was deployed to Heroku
+* I got the initial gspread error when the code was deployed to Heroku which needed to be addressed with some additions to my requirements.txt file.
 * Timer was running independently so I needed to go back and check through my code, and I realised the function needed to be called after the characters were generated
-*
-*
-
-## Solved Issues 
-
+* Boggle Board Grid was either displaying 16 random characters in one line, or a grid of 4x4 with the top line containing random characters, and the lines below repeating the same characters.
 * 
-*
-*
+
 
 
 ## Remaining Bugs 
-*
-*
+* Grid Display repeating 
+* 
 *
 
 ## Quirks
-  
+* One quite obvious quirk is my Boggle Board having square brackets and commas still intact. This was something I hoped to remove but I actually think the square brackets help give the board a grid- like appearance.
+
+* The timer is hidden as I was unable to prevent this from overwriting the user input text. It still runs in the background, you just can't see it or see how much time is left which is a shame.
 
 
 ## Future Development
-This game is best suited as a multi-player game which would really enhance the user experience and emotional attachement to the game. This is something I plan on working on for future iterations.
-
+* This game is best suited as a multi-player game which would really enhance the user experience and emotional attachement to the game. This is something I plan on working on for future iterations.
+* I would definitley improve upon the game logic, only allowing a certain number of vowels, consonats and 1/2 Qu characters.
+* I would also add logic for the computer to calculate the amount of English words found on the board and then run a comparison to what the end user found.
 
 ## Validation Testing
 * PEP8 - as per below picture there were no errros retured from https://PEP8online.com  
@@ -204,15 +198,18 @@ I relied heavily on the experience gained from the Love Sandwiches Project and u
     https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet
 * I sought some inspiration from the following links to help me decide on the best approach for my program:
     https://www.freecodecamp.org/news/how-to-build-a-wordle-clone-using-python-and-rich/
+    https://www.freecodecamp.org/news/how-to-build-a-wordle-clone-using-python-and-rich/
 
-*
 
 #### Code Sources 
 * I used the below code to help me create code for my button pressed functionality
     https://www.codegrepper.com/code-examples/python/python+detect+button+press 
 
 * I used the below site and code for my timer functionality with minor tweaks based on my own requirements for the app:
-https://www.programiz.com/python-programming/examples/countdown-timer
+    https://www.programiz.com/python-programming/examples/countdown-timer
+
+* I used a dictionary file taken from the below GITHUB, This is to confirm the words chosen are in fact dictionary verified words.
+    https://github.com/dwyl/english-words
 
 #### Modules
 I installed the following Modules for my project
