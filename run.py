@@ -1,4 +1,4 @@
-
+import keyboard #to allow us check userinput for menu
 import constants #holds the ascii art 
 import time      #enable use of timer function
 import gspread   #I am using google API for this project 
@@ -19,7 +19,51 @@ SHEET = GSPREAD_CLIENT.open('boggle_online')
 high_score = SHEET.worksheet('highscore')
 high_score_data = high_score.get_all_values()
 
+#def end_game():
+   
+    #"""
+    #This function is to 
+    #end the game, show the end game 
+    #graphics and call the crucial
+    #functions which determine
+    #if words entered are valid
+    #and if so the score
+    #This will also determine if 
+    #user has high score
+    #which will then be pushed 
+    #to the google sheet
+    #"""
+#print(constants.TIME_IS_UP1)
+#print(constants.TIME_IS_UP2)
+#print(constants.TIME_IS_UP3)
 
+
+def show_banner_screen():
+
+    """
+    This function is to 
+    ensure consistency 
+    thrughout the game
+    with the boggle online 
+    visible throughout workflow
+    """
+
+    print(constants.WELCOME1)
+    print(constants.WELCOME2)
+
+
+def countdown(time_sec):
+    while time_sec:
+        mins, secs = divmod(time_sec, 60)
+        timeformat = '{:02d}:{:02d}'.format(mins, secs)
+        #print(timeformat, end='\r')
+        time.sleep(1)
+        time_sec -= 1
+
+#print(constants.TIME_IS_UP1)
+#print(constants.TIME_IS_UP2)
+#print(constants.TIME_IS_UP3)
+  
 
 class BoggleBoard:
     """
@@ -40,54 +84,30 @@ def __init__(self, size, num_letters, score, word_count):
     self.word_count = word_count
     self.high_score = []
     print(self)
+board_selection =('a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o','p', 'q','r', 's', 't', 'u', 'v', 'w', 'x', 'y','z', 'qu')
+show_banner_screen()
+USER_NAME = input(' Enter username:')
+print("Let's go " + USER_NAME + '!')
 
-def show_banner_screen():
 
-    """
-    This function is to 
-    ensure consistency 
-    thrughout the game
-    with the boggle online 
-    visible throughout workflow
-    """
+for x in range(16):
+    gen_random_sixteen = random.choices(board_selection)
+    print(gen_random_sixteen)
 
-    print(constants.WELCOME1)
-    print(constants.WELCOME2)
+words_entered = input("Enter your words here: ")
+#print("Your Words :" + words_entered)
+countdown(90)
+end_game()
 
 
 #Timer code taken from
 #https://www.programiz.com 
 #see readme for full reference
-def end_game():
-   
-    """
-    This function is to 
-    end the game, show the end game 
-    graphics and call the crucial
-    functions which determine
-    if words entered are valid
-    and if so the score
-    This will also determine if 
-    user has high score
-    which will then be pushed 
-    to the google sheet
-    """
-print(constants.TIME_IS_UP1)
-print(constants.TIME_IS_UP2)
-print(constants.TIME_IS_UP3)
 
-def countdown(time_sec):
-    while time_sec:
-        mins, secs = divmod(time_sec, 60)
-        timeformat = '{:02d}:{:02d}'.format(mins, secs)
-        print(timeformat, end='\r')
-        time.sleep(1)
-        time_sec -= 1
 
-    print("TIMES UP")
-    end_game()
 
-def generate_board():
+
+#def generate_board():
     """
     This function is to control the game play
     it will generate the 
@@ -99,20 +119,7 @@ def generate_board():
     """
 
 
-board_selection =('a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o','p', 'q','r', 's', 't', 'u', 'v', 'w', 'x', 'y','z', 'qu')
-show_banner_screen()
-USER_NAME = input(' Enter username:')
-print("Let's go " + USER_NAME + '!')
 
-
-for x in range(16):
-    gen_random_sixteen = random.choices(board_selection)
-    print(gen_random_sixteen)
-
-words_entered = input("Enter your words here: /n")
-word = []
-print(f"Your Words :" + {words_entered} + '\n')
-countdown(90) + '\n'
 
 
 #function to calculate the points achieved in the course of the game
