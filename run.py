@@ -17,7 +17,35 @@ SHEET = GSPREAD_CLIENT.open('boggle_online')
 
 high_score = SHEET.worksheet('scores')
 high_score_data = high_score.get_all_values()
-gridl= []
+
+
+def welcome_screen():
+    """
+    This is the landing screen
+    when the program is first
+    run and will be the main
+    page for nav purposes
+    """
+    print(constants.WELCOME1)
+    print(constants.WELCOME2)
+    print("Can you find words on our online Boggle board?")
+    print("Get a high score to be added to the hall of fame")
+    board_selection = ('A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O','P', 'Q','R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', 'QU')
+    USER_NAME = input(' Enter username:')
+    attempts = 0
+    print("Let's go " + USER_NAME + '!')
+    grid = []
+
+for i in range(4):
+       
+       
+        grid.append(random.choices(board_selection, k=6))
+        print (grid[i])
+        words_entered = input("Enter your words here: ")
+        # if words entered attemts ++
+
+# code taken from www.codegrepper.com noted in readme
+# https://stackoverflow.com/questions/24072790/how-to-detect-key-presses
 
 def end_game():
    
@@ -33,61 +61,15 @@ def end_game():
     #which will then be pushed 
     #to the google sheet
     #"""
-    print(constants.TIME_IS_UP1)
-    print(constants.TIME_IS_UP2)
-    print(constants.TIME_IS_UP3)
-    #points_calculation()
-    print("Calculating your points....")
-    #check_if_high_score()
-    print("Checking to see if you have reached a high score")
+    if attempts >= 10:
+        print(constants.TIME_IS_UP1)
+        print(constants.TIME_IS_UP2)
+        print(constants.TIME_IS_UP3)
+        #points_calculation()
+        print("Calculating your points....")
+        #check_if_high_score()
+        print("Checking to see if you have reached a high score")
 
-def show_banner_screen():
-
-    """
-    This function is to 
-    ensure consistency 
-    thrughout the game
-    with the boggle online 
-    visible throughout workflow
-    """
-
-    print(constants.WELCOME1)
-    print(constants.WELCOME2)
-
-
-  class BoggleBoard:
-    """
-    Main Boggle Board class.
-    This sets the board size,
-    the number of letters to the displayed.
-    This boards displays the contdown and
-    has method to capture the users word
-    input and validate against dictionary
-    to award points for valid word entry only
-    """
-
-
-def __init__(self, size, num_letters, score, word_count):
-    self.size = size
-    self.num_letters = num_letters
-    self.score = score
-    self.word_count = word_count
-    self.high_score = []
-    print(self)
-
-board_selection = ('A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O','P', 'Q','R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y','Z', 'QU')
-show_banner_screen()
-USER_NAME = input(' Enter username:')
-print("Let's go " + USER_NAME + '!')
-
-
-grid = []
-for i in range(4):
-    grid.append(random.choices(board_selection, k=6))
-    print (grid[i])
- 
-
-words_entered = input("Enter your words here: ")
 
 
 
@@ -109,17 +91,15 @@ def points_calculation(words_entered):
         return 11
     return 0
 
-#def check_if_high_score(score):
-   # if score > 
-#current_scores = SHEET.worksheet("scores").get_all_values()
-#current_scores_row = scores[-1]
-
-#print(f"Updating {worksheet} worksheet...\n")
-#worksheet_to_update = SHEET.worksheet(scores)
-#worksheet_to_update.append_row(data)
-#print(f"{worksheet} ScoreBoard updated successfully\n")
-
-# print(high_score_data)
+def check_if_high_score(score):
+    if score > 10:
+            current_scores = SHEET.worksheet("scores").get_all_values()
+            print(f"Updating {worksheet} worksheet...\n")
+            worksheet_to_update = SHEET.worksheet(scores)
+            worksheet_to_update.append_row(data)
+            update_worksheet(high_score_data, "scores")
+            print(f"{worksheet} ScoreBoard updated successfully\n")
+            print(high_score_data)
 
 def show_menu():
 
@@ -138,25 +118,6 @@ def show_menu():
     print("++++ || For Scoreboard please hit the S Key|| ++++")
     print("++++ || To start a game hit Enter Key      || ++++")
     player_selection = input("Please select Option H, S or Enter: \n")
-
-
-#def welcome_screen():
-    """
-    This is the landing screen
-    when the program is first
-    run and will be the main
-    page for nav purposes
-    """
-
-
-#print(constants.WELCOME1)
-#print(constants.WELCOME2)
-#print("Can you find words on our online Boggle board?")
-#print("If you get a high score you will be added to our Boggle Hall of fame")
-#print("Until someone beats your score that is!!")
-#show_menu()
-# code taken from www.codegrepper.com noted in readme
-# https://stackoverflow.com/questions/24072790/how-to-detect-key-presses
 
 
 def error_in_selection():
