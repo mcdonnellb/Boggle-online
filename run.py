@@ -32,11 +32,11 @@ def welcome_screen():
     board_selection = ('A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O','P', 'Q','R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', 'QU')
     USER_NAME = input(" Enter username:")
     attempts = 0
-    print("Let's go " + USER_NAME + '!')
+print("Let's go " + USER_NAME + '!')
 grid = []
-        for i in range(4):
-        grid.append(random.choices(board_selection, k=6))
-        print (grid[i])
+for i in range(4):
+    grid.append(random.choices(board_selection, k=6))
+    print (grid[i])
 
     words_entered = input("Enter your words here: ")
    
