@@ -1,6 +1,4 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
-
-![Terminal window](/workspace/Boggle-online/documentation/images/terminal_window_screenshot1.jpg)
+![Terminal window](https://github.com/mcdonnellb/Boggle-online/blob/7dc2ac68eb8aac917ccdd7be4c505de90b840371/documentation/images/terminal_window_screenshot1.jpg)
 
 
 
