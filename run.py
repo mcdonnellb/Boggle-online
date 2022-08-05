@@ -18,10 +18,9 @@ SHEET = GSPREAD_CLIENT.open('boggle_online')
 
 high_score = SHEET.worksheet('highscore')
 high_score_data = high_score.get_all_values()
-board = []
+gridl= []
+grid = []
 
-x_axis = ["0", "1", "2", "3", "4", "E", "F"]
-#y_axis =["A","B","C","D","E"]
 #def end_game():
    
     #"""
@@ -39,7 +38,8 @@ x_axis = ["0", "1", "2", "3", "4", "E", "F"]
 #print(constants.TIME_IS_UP1)
 #print(constants.TIME_IS_UP2)
 #print(constants.TIME_IS_UP3)
-
+#points_calculation()
+#check_if_high_score()
 
 def show_banner_screen():
 
@@ -92,81 +92,46 @@ board_selection = ('A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', '
 show_banner_screen()
 USER_NAME = input(' Enter username:')
 print("Let's go " + USER_NAME + '!')
-board.append(x_axis)
-for i in range(0, 6):
-board.append([f"{i + 1}"] + ["O"] * 6)
-
+gen_random_sixteen = random.choices(board_selection)
 for x in range(16):
     gen_random_sixteen = random.choices(board_selection)
 
-    print(gen_random_sixteen)
+for i in range(5):
+    gen_random_sixteen = random.choices(board_selection)
+    gridl.append(gen_random_sixteen)
+
+for i in range(4):
+    #gen_random_sixteen = random.choices(board_selection)
+   grid.append(list(gridl))
+   #grid.append(gen_random_sixteen)
+   print(gridl)
 
 words_entered = input("Enter your words here: ")
-#print("Your Words :" + words_entered)
 countdown(90)
 #end_game()
 
-
-#Timer code taken from
-#https://www.programiz.com 
-#see readme for full reference
-
-
-
-
-#def generate_board():
-#"""
- #   This function is to control the game play
-  #  it will generate the 
-   # new random characters on the 
-    #board, start the countdown
-    #allow entry of words
-    #capture word array
-    #end game on time up
-    #"""
-
-
-
-
-
 #function to calculate the points achieved in the course of the game
-def points_calculation(word):
-    if len(word) == 3:
+def points_calculation(words_entered):
+    if len(words_entered) == 3:
         return 1
-    if len(word) == 5:
+    if len(words_entered) == 5:
         return 2
-    if len(word) == 6:
+    if len(words_entered) == 6:
         return 3
-    if len(word) == 7:
+    if len(words_entered) == 7:
         return 11
-    if len(word) >= 8:
+    if len(words_entered) >= 8:
         return 11
     return 0
 
+#def check_if_high_score(score):
+   # if score > 
 
-#def new_game():
-    """
-    This will start a new game.
-    This sets the board size,
-    resets the timer and the score
-    and refreshes the letters on the board.
-    """
+    print(f"Updating {worksheet} worksheet...\n")
+    worksheet_to_update = SHEET.worksheet(worksheet)
+    worksheet_to_update.append_row(data)
+    print(f"{worksheet} ScoreBoard updated successfully\n")
 
-
-#SIZE = 5
-
-#NUM_LETTERS = 16
-#score = 0
-
-
-#print("Can you find words on our online Boggle board?")
-#print("If you get a high score you will be added to our Boggle Hall of fame")
-#print("Until someone beats your score that is!!")
-#print(f" Board Size: {SIZE}. Number of Letters: {NUM_LETTERS}")
-#player_name = input("Please choose your username: \n")
-#print("{player_name {words entered}")
-#generate_board()
-#new_game()
 # print(high_score_data)
 
 def show_menu():
