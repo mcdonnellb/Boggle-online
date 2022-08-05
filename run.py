@@ -168,7 +168,6 @@ def show_menu():
 #print("If you get a high score you will be added to our Boggle Hall of fame")
 #print("Until someone beats your score that is!!")
 #show_menu()
-#new_game()
 # code taken from www.codegrepper.com noted in readme
 # https://stackoverflow.com/questions/24072790/how-to-detect-key-presses
 
@@ -190,6 +189,8 @@ def error_in_selection():
    # break  # finishing the loop
    # print(high_score_data)
      # elif keyboard.is_pressed('h'):
+
+    # def help_screen():
      #    print(constants.INSTRUCTIONS)
     #   print("++++ || Boggle will generate 16 char grid || ++++")
     #  print("++++ || Your goal is to form words        || ++++")
@@ -201,8 +202,8 @@ def error_in_selection():
     # print("++++ || A 6-letter word earns you 3 points|| ++++")
     # print("++++ || A 7-letter word earns you 5 points|| ++++")
     # print("++++ || 8+ letters earns you 11 points    || ++++")
-        
-        # break
+
+      
 
 
 
@@ -210,4 +211,3 @@ def error_in_selection():
         # print(constants.WELCOME1)
         # print(constants.WELCOME2)
     #welcome_screen()
-
