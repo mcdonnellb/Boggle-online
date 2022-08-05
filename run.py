@@ -84,7 +84,7 @@ def __init__(self, size, num_letters, score, word_count):
     self.word_count = word_count
     self.high_score = []
     print(self)
-board_selection =('a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o','p', 'q','r', 's', 't', 'u', 'v', 'w', 'x', 'y','z', 'qu')
+board_selection =('A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O','P', 'Q','R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y','Z', 'QU')
 show_banner_screen()
 USER_NAME = input(' Enter username:')
 print("Let's go " + USER_NAME + '!')
@@ -92,6 +92,7 @@ print("Let's go " + USER_NAME + '!')
 
 for x in range(16):
     gen_random_sixteen = random.choices(board_selection)
+
     print(gen_random_sixteen)
 
 words_entered = input("Enter your words here: ")
@@ -108,15 +109,15 @@ end_game()
 
 
 #def generate_board():
-    """
-    This function is to control the game play
-    it will generate the 
-    new random characters on the 
-    board, start the countdown
-    allow entry of words
-    capture word array
-    end game on time up
-    """
+#"""
+ #   This function is to control the game play
+  #  it will generate the 
+   # new random characters on the 
+    #board, start the countdown
+    #allow entry of words
+    #capture word array
+    #end game on time up
+    #"""
 
 
 
