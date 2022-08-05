@@ -1,5 +1,4 @@
 # Your requirements go here
-pip3 freeze
 gspread==4.0.1
 cachetools==4.2.1
 google-auth==1.27.0
