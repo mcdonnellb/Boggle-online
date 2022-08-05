@@ -62,10 +62,6 @@ def countdown(time_sec):
         #print(timeformat, end='\r')
         time.sleep(1)
         time_sec -= 1
-
-#print(constants.TIME_IS_UP1)
-#print(constants.TIME_IS_UP2)
-#print(constants.TIME_IS_UP3)
   
 
 class BoggleBoard:
