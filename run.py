@@ -1,5 +1,6 @@
 
 import constants
+import time
 import gspread
 from google.oauth2.service_account import Credentials
 import random
@@ -41,6 +42,19 @@ def __init__(self, size, num_letters, score, word_count):
     self.timer = 90
     print(self)
 
+def show_banner_screen():
+
+    """
+    This function is to 
+    ensure consistency 
+    thrughout the game
+    with the boggle online 
+    visible throughout workflow
+    """
+
+    print(constants.WELCOME1)
+    print(constants.WELCOME2)
+
 
 def generate_board():
     """
@@ -51,14 +65,19 @@ def generate_board():
 
 
 board_selection =('a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o','p', 'q','r', 's', 't', 'u', 'v', 'w', 'x', 'y','z', 'qu')
-banner_screen()
-user_name = input(' username/n')
+show_banner_screen()
+user_name = input(' Enter username:')
+print("Let's go " + user_name + '!')
+timer = 90
+#while timer > 1:
+ #   print(time)
 for x in range(16):
     gen_random_sixteen = random.choices(board_selection)
     print(gen_random_sixteen)
 
-words_entered = input("Enter your words here/n")
+words_entered = input("Enter your words here: ")
 print(words_entered)
+print(timer -1)
 
 
 def points_calculation(word):
@@ -75,7 +94,7 @@ def points_calculation(word):
     return 0
 
 
-def new_game():
+#def new_game():
     """
     This will start a new game.
     This sets the board size,
@@ -84,19 +103,19 @@ def new_game():
     """
 
 
-SIZE = 5
+#SIZE = 5
 
-NUM_LETTERS = 16
-score = 0
+#NUM_LETTERS = 16
+#score = 0
 
 
-print("Can you find words on our online Boggle board?")
-print("If you get a high score you will be added to our Boggle Hall of fame")
-print("Until someone beats your score that is!!")
-print(f" Board Size: {SIZE}. Number of Letters: {NUM_LETTERS}")
-player_name = input("Please choose your username: \n")
-print("{player_name {words entered}")
-generate_board()
+#print("Can you find words on our online Boggle board?")
+#print("If you get a high score you will be added to our Boggle Hall of fame")
+#print("Until someone beats your score that is!!")
+#print(f" Board Size: {SIZE}. Number of Letters: {NUM_LETTERS}")
+#player_name = input("Please choose your username: \n")
+#print("{player_name {words entered}")
+#generate_board()
 #new_game()
 # print(high_score_data)
 
@@ -118,21 +137,8 @@ def show_menu():
     print("++++ || To start a game hit Enter Key      || ++++")
     player_selection = input("Please select Option H, S or Enter: \n")
 
-def banner_screen():
 
-    """
-    This function is to 
-    ensure consistency 
-    thrughout the game
-    with the boggle online 
-    visible throughout workflow
-    """
-
-    print(constants.WELCOME1)
-    print(constants.WELCOME2)
-
-
-def welcome_screen():
+#def welcome_screen():
     """
     This is the landing screen
     when the program is first
@@ -141,13 +147,13 @@ def welcome_screen():
     """
 
 
-print(constants.WELCOME1)
-print(constants.WELCOME2)
-print("Can you find words on our online Boggle board?")
-print("If you get a high score you will be added to our Boggle Hall of fame")
-print("Until someone beats your score that is!!")
-show_menu()
-new_game()
+#print(constants.WELCOME1)
+#print(constants.WELCOME2)
+#print("Can you find words on our online Boggle board?")
+#print("If you get a high score you will be added to our Boggle Hall of fame")
+#print("Until someone beats your score that is!!")
+#show_menu()
+#new_game()
 # code taken from www.codegrepper.com noted in readme
 # https://stackoverflow.com/questions/24072790/how-to-detect-key-presses
 
@@ -158,11 +164,10 @@ def error_in_selection():
     user should only be able to select H, S or E
     for Menu to function
     """
+    show_banner_screen()
     print(constants.INPUT_ERROR)
     print(constants.INPUT_ERROR2)
     print(constants.INPUT_ERROR3)
-    print(constants.WELCOME1)
-    print(constants.WELCOME2)
     print("++++ || You hit the wrong key        || ++++")
     show_menu()
    # elif keyboard.is_pressed('s'):
