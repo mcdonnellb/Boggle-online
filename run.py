@@ -52,10 +52,15 @@ def generate_board():
     """
 
 
-board_selection = SHEET.worksheet('letters')
-board_selection_data = board_selection.get_all_values()
-gen_random_sixteen = random.choices(board_selection)
-print(gen_random_sixteen)
+#board_selection = SHEET.worksheet('letters')
+board_selection =('a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o','p', 'q','r', 's', 't', 'u', 'v', 'w', 'x', 'y','z', 'qu')
+#board_selection_data = board_selection.get_all_values()
+
+
+for x in range(16):
+    gen_random_sixteen = random.choices(board_selection)
+    print(gen_random_sixteen)
+
 words_entered = input("Enter your words here")
 
 
@@ -99,12 +104,12 @@ generate_board()
 # print(high_score_data)
 
 def show_menu():
-print(constants.WELCOME1)
-print(constants.WELCOME2)
-print("++++ || For Help please hit the H Key      || ++++")
-print("++++ || For Scoreboard please hit the S Key|| ++++")
-print("++++ || To start a game hit Enter Key      || ++++")
-player_selection = input("Please select Option H, S or Enter: \n")
+    print(constants.WELCOME1)
+    print(constants.WELCOME2)
+    print("++++ || For Help please hit the H Key      || ++++")
+    print("++++ || For Scoreboard please hit the S Key|| ++++")
+    print("++++ || To start a game hit Enter Key      || ++++")
+    player_selection = input("Please select Option H, S or Enter: \n")
 
 def welcome_screen():
     """
