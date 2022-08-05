@@ -1,9 +1,9 @@
 
-import constants
-import time
-import gspread
-from google.oauth2.service_account import Credentials
-import random
+import constants #holds the ascii art 
+import time      #enable use of timer function
+import gspread   #I am using google API for this project 
+from google.oauth2.service_account import Credentials # limits scope of use of API
+import random #to allow random selection of characters for boggle board 
 
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
@@ -55,19 +55,27 @@ def show_banner_screen():
     print(constants.WELCOME2)
 
 
-
-
-    """
-    This function is to 
-    allow a timer be applied to the game
-    this means that the user will have 90 seconds
-    between random board generation
-    and end of game to enter
-    as many words as possible
-    """
 #Timer code taken from
 #https://www.programiz.com 
 #see readme for full reference
+def end_game():
+   
+    """
+    This function is to 
+    end the game, show the end game 
+    graphics and call the crucial
+    functions which determine
+    if words entered are valid
+    and if so the score
+    This will also determine if 
+    user has high score
+    which will then be pushed 
+    to the google sheet
+    """
+print(constants.TIME_IS_UP1)
+print(constants.TIME_IS_UP2)
+print(constants.TIME_IS_UP3)
+
 def countdown(time_sec):
     while time_sec:
         mins, secs = divmod(time_sec, 60)
@@ -77,12 +85,17 @@ def countdown(time_sec):
         time_sec -= 1
 
     print("TIMES UP")
+    end_game()
 
 def generate_board():
     """
-    This will generate the 
+    This function is to control the game play
+    it will generate the 
     new random characters on the 
-    board.
+    board, start the countdown
+    allow entry of words
+    capture word array
+    end game on time up
     """
 
 
@@ -97,11 +110,12 @@ for x in range(16):
     print(gen_random_sixteen)
 
 words_entered = input("Enter your words here: /n")
-print("Your Words :" + words_entered + '\n')
+word = []
+print(f"Your Words :" + {words_entered} + '\n')
 countdown(90) + '\n'
 
 
-
+#function to calculate the points achieved in the course of the game
 def points_calculation(word):
     if len(word) == 3:
         return 1
