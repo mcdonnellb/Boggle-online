@@ -1,6 +1,5 @@
 
-import constants 
-import time      
+import constants     
 import gspread 
 from google.oauth2.service_account import Credentials 
 import random 
@@ -16,10 +15,9 @@ SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('boggle_online')
 
-high_score = SHEET.worksheet('highscore')
+high_score = SHEET.worksheet('scores')
 high_score_data = high_score.get_all_values()
 gridl= []
-grid = []
 
 def end_game():
    
@@ -39,7 +37,7 @@ def end_game():
     print(constants.TIME_IS_UP2)
     print(constants.TIME_IS_UP3)
     #points_calculation()
-    print("Calculating your ponts....")
+    print("Calculating your points....")
     #check_if_high_score()
     print("Checking to see if you have reached a high score")
 
@@ -57,16 +55,7 @@ def show_banner_screen():
     print(constants.WELCOME2)
 
 
-def countdown(time_sec):
-    while time_sec:
-        mins, secs = divmod(time_sec, 60)
-        timeformat = '{:02d}:{:02d}'.format(mins, secs)
-        #print(timeformat, end='\r')
-        time.sleep(1)
-        time_sec -= 1
-  
-
-class BoggleBoard:
+  class BoggleBoard:
     """
     Main Boggle Board class.
     This sets the board size,
@@ -90,24 +79,21 @@ board_selection = ('A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', '
 show_banner_screen()
 USER_NAME = input(' Enter username:')
 print("Let's go " + USER_NAME + '!')
-gen_random_sixteen = random.choices(board_selection)
-for x in range(16):
-    gen_random_sixteen = random.choices(board_selection)
 
-for i in range(5):
-    gen_random_sixteen = random.choices(board_selection)
-    gridl.append(gen_random_sixteen)
 
+grid = []
 for i in range(4):
-    #gen_random_sixteen = random.choices(board_selection)
-   grid.append(list(gridl))
-   #grid.append(gen_random_sixteen)
-   print(gridl)
+    grid.append(random.choices(board_selection, k=6))
+    print (grid[i])
+ 
 
 words_entered = input("Enter your words here: ")
-countdown(90)
-if countdown == 0:
-    end_game()
+
+
+
+def get_random_choice():
+    return random.choices(board_selection)
+
 
 #function to calculate the points achieved in the course of the game
 def points_calculation(words_entered):
@@ -125,13 +111,13 @@ def points_calculation(words_entered):
 
 #def check_if_high_score(score):
    # if score > 
-    current_scores = SHEET.worksheet("scores").get_all_values()
-      current_scores_row = scores[-1]
+#current_scores = SHEET.worksheet("scores").get_all_values()
+#current_scores_row = scores[-1]
 
-    print(f"Updating {worksheet} worksheet...\n")
-    worksheet_to_update = SHEET.worksheet(scores)
-    worksheet_to_update.append_row(data)
-    print(f"{worksheet} ScoreBoard updated successfully\n")
+#print(f"Updating {worksheet} worksheet...\n")
+#worksheet_to_update = SHEET.worksheet(scores)
+#worksheet_to_update.append_row(data)
+#print(f"{worksheet} ScoreBoard updated successfully\n")
 
 # print(high_score_data)
 
@@ -191,10 +177,18 @@ def error_in_selection():
    # print(high_score_data)
      # elif keyboard.is_pressed('h'):
 
+    #This is the function for the highscore screen
+  
+    # def display_score_board_screen():
+      #print(constants.WELCOME1)
+      #print(constants.WELCOME2)
+    # 
+    # 
+    # This is the function for the help screen
     # def help_screen():
-     #    print(constants.INSTRUCTIONS)
-    #   print("++++ || Boggle will generate 16 char grid || ++++")
-    #  print("++++ || Your goal is to form words        || ++++")
+     # print(constants.INSTRUCTIONS)
+    # print("++++ || Boggle will generate 16 char grid || ++++")
+    # print("++++ || Your goal is to form words        || ++++")
     # print("++++ || They must be atleast 3 chars long || ++++")
     # print("++++ || You have 90 seconds on the clock  || ++++")
     # print("++++ || QU will count as two letters      || ++++")
