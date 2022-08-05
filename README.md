@@ -35,11 +35,11 @@ The user with the most words then wins.
 
 I chose this game both  to keep up with my theme of 90's nostalgia, but also because I felt this would be an approoprirate game for deployment within this command line environment. 
 
-Boggle online will be true to it's 90's self with the same simplistic rules, the biggest difference will be that the computer will be in lieu of a real opponent, using the google API to r
+Boggle online will be true to it's 90's self with the same simplistic rules, the biggest difference will be that the computer will be in lieu of a real opponent, using the google API to check validity of the words entered, and push to the high score sheet if user has attained a score higher than those already on the list.
 
 The live version of my project is available at the below link:
-https://www.heroku.com/ 
 
+https://boggle-online.herokuapp.com/
 #### User Experience 
 
 Critical Objectives:
@@ -49,31 +49,23 @@ Critical Objectives:
 #### User Goals 
 
 * End user Goal
-The application user wants to play a logic game
-
-* Site owner's goal:
-
-The Boggle game will generate a board of 4 x 4 characters, the objective of the game is to find as many words as possible before the time is up. 
-The application provides a working boggle game for a single user to play against the computer
+- The application user wants to play a logic game based upon a classic board game
+- The application user wants to be challenged and entertained
+- The application user wants to know at all times what is happening, how to navigate, options etc
 
 
+* Site owner's goal: 
+- The site owner goal is to provide a functioning, challenging game for a single user to play against the computer
+- The goal is to create an application as close to the original 90's Boggle game as is achievable within a command line application.
+- The goal is to create a workflow that is straightforward and thoughful
+- The goal is to create a program that end users will want to return to.
 
-## Requirements
+
+#### Overall requirements of Assessment:
 Project Purpose:
 
 In this project, Portfolio 3,  the requirment was to build a command-line application that allows your users to manage a common dataset about a particular domain.
-As part of Project 3 - python Computer Program Development, the following are required 
-* Computer Program written in Python
-
-* Heroku app 
-
-* Google API (required to attain more than pass grade)
-
-* Use of a Data Model ( I used a class which ticked another project criteria which was for this to be Object Oriented)
-
-* Deployed using GIT
-
-#### Overall requirements of Assessment:
+As part of Project 3 - python Computer Program Development, the following items were required:
 
 *  Implement a given algorithm as a computer program
 *  Adapt and combine algorithms to solve a given problem
@@ -84,7 +76,6 @@ As part of Project 3 - python Computer Program Development, the following are re
 *  Implement a data model, application features and business logic to manage, query and manipulate data to meet given needs in a particular real-world domain.
 *  Demonstrate and document the development process through a version control system such as GitHub
 *  Deploy a command-line application
-
 
 
 ## Game Workflow
@@ -101,11 +92,11 @@ As part of Project 3 - python Computer Program Development, the following are re
 - The user will be presented with the end game screen. 
 
 
-
 ## Design 
+I opted for bold ASCII art to try and enhance the appearance of my application. My initial iteration did not have this art and from feedback, users advised they would feel more inclined to return to the current application due to the osiitive emotional response they had when playing.
 
 #### User Control
-*
+* simplfied menu options to ensure user has ease of navigation through program
 *
 *
 
@@ -113,48 +104,16 @@ As part of Project 3 - python Computer Program Development, the following are re
 
 #### Confirmation
 
-I added the following options to allow a user know that thier data is good:
-*Print Messages following on from data input
+I added the following options to allow a user know that their data is good:
+* Print confirmation Messages following on from data input 
 *
 *
 
 I added the following to let the user know they had entered bad data: 
 * Print Message outlining what the issue is and what is expected 
 *
-*
 
 #### Development and Implementation
-* Readability
-    How I kept my code as clean as possible and used started descriptive naming conventions
-* Defensive Design
-    all input data is validated (e.g. presence check, format check, range check)
-    internal errors are handled gracefully, and users are notified of the problem where appropriate.
-* Comments
-
-* Compliant Code
-* Robust code
-
-
-* Version Control Software - GIT
-
-For this project I was very conscious that I used the version control software as effectively as possible, per Code Institite / best practices:
-
-* All code  managed in git with commit messages that reflect the specific reason for the commit
-with is a separate, defined commit for each feature/fix
-* There are no  large commits which make it harder to understand the development process and could lead the assessor to suspect plagiarism
-
-## Accessability 
-
-## Reminders
-
-* Your code must be placed in the `run.py` file
-* Your dependencies must be placed in the `requirements.txt` file
-* Do not edit any of the other files or your code may not deploy properly
-
-## Constraints
-
-The deployment terminal is set to 80 columns by 24 rows. That means that each line of text needs to be 80 characters or less otherwise it will be wrapped onto a second line.
-
 
 ## Deployment Details
 
@@ -166,29 +125,20 @@ The project was deployed using the Code Institute terminal for Heroku. In order 
 * I added a line to gitignore so that the creds file would not be added to pushed with the commits for security reasons.
 * I created a new Heroku app with region set to Europe
 * I set the buildbacks from the settings tab to Python and NodeJS
+* I created a config var for creds so that Heroku can access google APIs.
 * I created a config var called `PORT` and set this value to `8000`
-* I linked the Heroku app to my repository
+* I linked the Heroku app to my GITHUB repository
 * I clicked on the deploy option 
 
-## Creating the Heroku app
-
-When you create the app, you will need to add two buildpacks from the _Settings_ tab. The ordering is as follows:
-
-1. `heroku/python`
-2. `heroku/nodejs`
-
-You must then create a _Config Var_ called `PORT`. Set this to `8000`
-
-If you have credentials, such as in the Love Sandwiches project, you must create another _Config Var_ called `CREDS` and paste the JSON into the value field.
 
 #### Google API
-i took inspiration from the Love Sandwiches project and decided to use a similar apporach to my computer Program, using Google Sheets to store data/ add data/ query data.
+I took inspiration from the Love Sandwiches project and decided to use a similar apporach to my computer Program, using Google Sheets to store data/ add data/ query data.
 
 
-#### Python Validation
+#### Testing
 
-## Testing 
 I have manually tested my project by completing the folling steps:
+
 * Run the code through the PEP8 linter and confirmed all errors were cleared.
 * Tested mulitple inputs to ensure only valid data is accepted, and errors thrown in appropritate situations
 * Tested in both my local terminal and the Code Institute Heroku Terminal to ensure testing is thorough.
@@ -201,8 +151,8 @@ The below  are issues I encountered over the course of this Python computer prog
 * In order for input methods to work  correctly in the deployed mock terminal,  
 I added a new line character at the  end of the text inside the input method.  
 Without this extra line, the text for the import  request will not show up in the terminal.   
-*
-*
+* I got the initial gspread error when the code was deployed to Heroku
+* Timer was running independently so I needed to go back and check through my code, and I realised the function needed to be called after the characters were generated
 *
 *
 
@@ -241,7 +191,8 @@ Taken from my last assignment with hints taken from the below website:
 
 
 #### Media 
-
+Flow chart created through Mural:
+https://app.mural.co/
 
 ## Inspiritation
 I relied heavily on the experience gained from the Love Sandwiches Project and used this as my basis for creating my application. I also sought inspiration from the battleships example given by Code Institute in terms of the logic used to create the application.
@@ -259,3 +210,12 @@ I relied heavily on the experience gained from the Love Sandwiches Project and u
 #### Code Sources 
 * I used the below code to help me create code for my button pressed functionality
     https://www.codegrepper.com/code-examples/python/python+detect+button+press 
+
+* I used the below site and code for my timer functionality with minor tweaks based on my own requirements for the app:
+https://www.programiz.com/python-programming/examples/countdown-timer
+
+#### Modules
+I installed the following Modules for my project
+* GSPREAD -allow use of Google sheets api
+* Keyboard capture keyboard input
+* Random    to allow ease of creating boogle board random characters
