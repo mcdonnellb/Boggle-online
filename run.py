@@ -1,8 +1,7 @@
-
-import constants     
-import gspread 
-from google.oauth2.service_account import Credentials 
-import random 
+import constants
+import gspread
+from google.oauth2.service_account import Credentials
+import random
 
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
@@ -31,18 +30,17 @@ def welcome_screen():
     print("Can you find words on our online Boggle board?")
     print("Get a high score to be added to the hall of fame")
     board_selection = ('A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O','P', 'Q','R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', 'QU')
-    USER_NAME = input(' Enter username:')
+    USER_NAME = input(" Enter username:")
     attempts = 0
     print("Let's go " + USER_NAME + '!')
     grid = []
+        for i in range(4):
+            grid.append(random.choices(board_selection, k=6))
+            print (grid[i])
 
-for i in range(4):
-       
-       
-        grid.append(random.choices(board_selection, k=6))
-        print (grid[i])
-        words_entered = input("Enter your words here: ")
-        # if words entered attemts ++
+    words_entered = input("Enter your words here: ")
+   
+    attempts = attempts + 1
 
 # code taken from www.codegrepper.com noted in readme
 # https://stackoverflow.com/questions/24072790/how-to-detect-key-presses
@@ -91,6 +89,7 @@ def points_calculation(words_entered):
         return 11
     return 0
 
+
 def check_if_high_score(score):
     if score > 10:
             current_scores = SHEET.worksheet("scores").get_all_values()
@@ -101,14 +100,15 @@ def check_if_high_score(score):
             print(f"{worksheet} ScoreBoard updated successfully\n")
             print(high_score_data)
 
+
 def show_menu():
 
     """
-    This function is to 
-    ensure consistency 
+    This function is to
+    ensure consistency
     thrughout the game
-    with the menu items  
-    visible throughout workflow 
+    with the menu items
+    visible throughout workflow
     in critical screens to ensure
     positive UX experience
     """
@@ -132,38 +132,3 @@ def error_in_selection():
     print(constants.INPUT_ERROR3)
     print("++++ || You hit the wrong key        || ++++")
     show_menu()
-   # elif keyboard.is_pressed('s'):
-   # print(constants.SCOREBOARD)
-   # break  # finishing the loop
-   # print(high_score_data)
-     # elif keyboard.is_pressed('h'):
-
-    #This is the function for the highscore screen
-  
-    # def display_score_board_screen():
-      #print(constants.WELCOME1)
-      #print(constants.WELCOME2)
-    # 
-    # 
-    # This is the function for the help screen
-    # def help_screen():
-     # print(constants.INSTRUCTIONS)
-    # print("++++ || Boggle will generate 16 char grid || ++++")
-    # print("++++ || Your goal is to form words        || ++++")
-    # print("++++ || They must be atleast 3 chars long || ++++")
-    # print("++++ || You have 90 seconds on the clock  || ++++")
-    # print("++++ || QU will count as two letters      || ++++")
-    # print("++++ || A 3-letter word earns you 1 point || ++++")
-    # print("++++ || A 5-letter word earns you 2 points|| ++++")
-    # print("++++ || A 6-letter word earns you 3 points|| ++++")
-    # print("++++ || A 7-letter word earns you 5 points|| ++++")
-    # print("++++ || 8+ letters earns you 11 points    || ++++")
-
-      
-
-
-
-        
-        # print(constants.WELCOME1)
-        # print(constants.WELCOME2)
-    #welcome_screen()

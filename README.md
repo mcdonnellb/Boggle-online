@@ -1,11 +1,16 @@
 ![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
 
+![Terminal window](/workspace/Boggle-online/documentation/images/terminal_window_screenshot1.jpg)
 
-+ [Game Workflow](#gameworkflow "Game Workflow")
-    + [User Experience](#userexperience "User Experience")
-    + [User Stories](#user-stories "User Stories")
-    + [User Goals](#user-goals "User Goals")
+
+
+
++ [Assignment Purpose](#assignmentpurpose "Assignment Purpose")
++ [User Experience](#userexperience "User Experience")
++ [User Stories](#user-stories "User Stories")
++ [User Goals](#user-goals "User Goals")
 + [Requirements](#requirements "Requirements")
++ [Game Workflow](#gameworkflow "Game Workflow")
 + [Design](#design "Design")
 + [Accessibility](#accessability "Accessability")
 + [Deployment Details](#deployment-details "Accessability")
@@ -15,7 +20,6 @@
     + [Python Validation](#pythonvalidation "Python Validation")
     + [HTML Validation](#htmlvalidation "HTML Validation")
 + [Citations](#citations "Citations")
-+ [Lessons Learned](#lessons-learned “Lessons Learned")
 + [Quirks](#quirks "Quirks")
 + [Future Features](#future-features "Future Features")
 
@@ -40,6 +44,7 @@ Boggle online will be true to it's 90's self with the same simplistic rules, the
 The live version of my project is available at the below link:
 
 https://boggle-online.herokuapp.com/
+
 #### User Experience 
 
 Critical Objectives:
@@ -91,6 +96,7 @@ As part of Project 3 - python Computer Program Development, the following items 
 - The program will add this score and name to the High Score Array, if it is indeed a high score.
 - The user will be presented with the end game screen. 
 
+![Game Workflow](/workspace/Boggle-online/documentation/images/python_workflow_thought_process.jpg)
 
 ## Design 
 I opted for bold ASCII art to try and enhance the appearance of my application. My initial iteration did not have this art and from feedback, users advised they would feel more inclined to return to the current application due to the osiitive emotional response they had when playing.
@@ -139,6 +145,9 @@ I have manually tested my project by completing the folling steps:
 * Tested mulitple inputs to ensure only valid data is accepted, and errors thrown in appropritate situations
 * Tested in both my local terminal and the Code Institute Heroku Terminal to ensure testing is thorough.
 
+
+![PEP8 validation](/workspace/Boggle-online/documentation/images/python_workflow_thought_process.jpg)
+
 ## Error Log 
 The below  are issues I encountered over the course of this Python computer program development:
 
@@ -155,9 +164,11 @@ Without this extra line, the text for the import  request will not show up in th
 
 
 ## Remaining Bugs 
-* Grid Display repeating 
-* 
-*
+* Timer was not working so was removed - please ignore any references 
+
+* validation checks  was not working so was removed
+*  score check and dictionary check were not working so removed.
+
 
 ## Quirks
 * One quite obvious quirk is my Boggle Board having square brackets and commas still intact. This was something I hoped to remove but I actually think the square brackets help give the board a grid- like appearance.
