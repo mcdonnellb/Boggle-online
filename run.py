@@ -18,7 +18,10 @@ SHEET = GSPREAD_CLIENT.open('boggle_online')
 
 high_score = SHEET.worksheet('highscore')
 high_score_data = high_score.get_all_values()
+board = []
 
+x_axis = ["0", "1", "2", "3", "4", "E", "F"]
+#y_axis =["A","B","C","D","E"]
 #def end_game():
    
     #"""
@@ -84,11 +87,14 @@ def __init__(self, size, num_letters, score, word_count):
     self.word_count = word_count
     self.high_score = []
     print(self)
-board_selection =('A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O','P', 'Q','R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y','Z', 'QU')
+
+board_selection = ('A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O','P', 'Q','R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y','Z', 'QU')
 show_banner_screen()
 USER_NAME = input(' Enter username:')
 print("Let's go " + USER_NAME + '!')
-
+board.append(x_axis)
+for i in range(0, 6):
+board.append([f"{i + 1}"] + ["O"] * 6)
 
 for x in range(16):
     gen_random_sixteen = random.choices(board_selection)
@@ -98,7 +104,7 @@ for x in range(16):
 words_entered = input("Enter your words here: ")
 #print("Your Words :" + words_entered)
 countdown(90)
-end_game()
+#end_game()
 
 
 #Timer code taken from
