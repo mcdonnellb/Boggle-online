@@ -39,7 +39,6 @@ def __init__(self, size, num_letters, score, word_count):
     self.score = score
     self.word_count = word_count
     self.high_score = []
-    self.timer = 90
     print(self)
 
 def show_banner_screen():
@@ -56,6 +55,29 @@ def show_banner_screen():
     print(constants.WELCOME2)
 
 
+
+
+    """
+    This function is to 
+    allow a timer be applied to the game
+    this means that the user will have 90 seconds
+    between random board generation
+    and end of game to enter
+    as many words as possible
+    """
+#Timer code taken from
+#https://www.programiz.com 
+#see readme for full reference
+def countdown(time_sec):
+    while time_sec:
+        mins, secs = divmod(time_sec, 60)
+        timeformat = '{:02d}:{:02d}'.format(mins, secs)
+        print(timeformat, end='\r')
+        time.sleep(1)
+        time_sec -= 1
+
+    print("TIMES UP")
+
 def generate_board():
     """
     This will generate the 
@@ -66,18 +88,18 @@ def generate_board():
 
 board_selection =('a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o','p', 'q','r', 's', 't', 'u', 'v', 'w', 'x', 'y','z', 'qu')
 show_banner_screen()
-user_name = input(' Enter username:')
-print("Let's go " + user_name + '!')
-timer = 90
-#while timer > 1:
- #   print(time)
+USER_NAME = input(' Enter username:')
+print("Let's go " + USER_NAME + '!')
+
+
 for x in range(16):
     gen_random_sixteen = random.choices(board_selection)
     print(gen_random_sixteen)
 
-words_entered = input("Enter your words here: ")
-print(words_entered)
-print(timer -1)
+words_entered = input("Enter your words here: /n")
+print("Your Words :" + words_entered + '\n')
+countdown(90) + '\n'
+
 
 
 def points_calculation(word):
