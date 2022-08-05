@@ -15,11 +15,9 @@ SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('boggle_online')
 
-sales = SHEET.worksheet('sales')
 high_score = SHEET.worksheet('highscore')
 high_score_data = high_score.get_all_values()
 
-data = sales.get_all_values()
 
 
 class BoggleBoard:
@@ -52,16 +50,15 @@ def generate_board():
     """
 
 
-#board_selection = SHEET.worksheet('letters')
 board_selection =('a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o','p', 'q','r', 's', 't', 'u', 'v', 'w', 'x', 'y','z', 'qu')
-#board_selection_data = board_selection.get_all_values()
-
-
+banner_screen()
+user_name = input(' username/n')
 for x in range(16):
     gen_random_sixteen = random.choices(board_selection)
     print(gen_random_sixteen)
 
-words_entered = input("Enter your words here")
+words_entered = input("Enter your words here/n")
+print(words_entered)
 
 
 def points_calculation(word):
@@ -104,12 +101,36 @@ generate_board()
 # print(high_score_data)
 
 def show_menu():
+
+    """
+    This function is to 
+    ensure consistency 
+    thrughout the game
+    with the menu items  
+    visible throughout workflow 
+    in critical screens to ensure
+    positive UX experience
+    """
     print(constants.WELCOME1)
     print(constants.WELCOME2)
     print("++++ || For Help please hit the H Key      || ++++")
     print("++++ || For Scoreboard please hit the S Key|| ++++")
     print("++++ || To start a game hit Enter Key      || ++++")
     player_selection = input("Please select Option H, S or Enter: \n")
+
+def banner_screen():
+
+    """
+    This function is to 
+    ensure consistency 
+    thrughout the game
+    with the boggle online 
+    visible throughout workflow
+    """
+
+    print(constants.WELCOME1)
+    print(constants.WELCOME2)
+
 
 def welcome_screen():
     """
@@ -126,21 +147,9 @@ print("Can you find words on our online Boggle board?")
 print("If you get a high score you will be added to our Boggle Hall of fame")
 print("Until someone beats your score that is!!")
 show_menu()
-
-# player_selection = input("Please select Option H, S or Enter: \n")
-
 new_game()
 # code taken from www.codegrepper.com noted in readme
 # https://stackoverflow.com/questions/24072790/how-to-detect-key-presses
-
-# user_input = input()
-# options = ("H", "S", "E")
-# if user_input == "E":
-# print("You Pressed Enter !/n")
-#  welcome_screen()
-# if user_input not in options:
-# print("uh oh")
-# error_in_selection()
 
 
 def error_in_selection():
