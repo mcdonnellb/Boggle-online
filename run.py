@@ -1,9 +1,9 @@
-import keyboard #to allow us check userinput for menu
-import constants #holds the ascii art 
-import time      #enable use of timer function
-import gspread   #I am using google API for this project 
-from google.oauth2.service_account import Credentials # limits scope of use of API
-import random #to allow random selection of characters for boggle board 
+
+import constants 
+import time      
+import gspread 
+from google.oauth2.service_account import Credentials 
+import random 
 
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
