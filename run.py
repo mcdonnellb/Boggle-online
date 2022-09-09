@@ -13,7 +13,7 @@ CREDS = Credentials.from_service_account_file('creds.json')
 SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('boggle_online')
-attemptes = 0 
+attempts = 0 
 
 high_score = SHEET.worksheet('scores')
 high_score_data = high_score.get_all_values()
@@ -37,10 +37,10 @@ def welcome_screen():
     grid = []
     for i in range(4):
         grid.append(random.choices(board_selection, k=6))
-        print (grid[i])
-
-words_entered = input("Enter your words here: ")
+        print(grid[i])
+    #    words_entered = input("Enter your words here: ")
    
+attempts = 0
 attempts = attempts + 1
 
 # code taken from www.codegrepper.com noted in readme
