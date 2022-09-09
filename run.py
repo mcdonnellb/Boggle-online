@@ -21,6 +21,25 @@ print(high_score_data)
 
 
 
+def generate_board():
+    board_selection = ('A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', 'QU')
+    grid = []
+    for i in range(8):
+        grid.append(random.choices(board_selection, k=8))
+        print(grid[i])
+        game_in_play()
+        def game_in_play():
+         while gane_in_play is true: 
+           words_entered = input("Enter your words here: ")
+attempts = 0
+attempts = attempts + 1
+
+# code taken from www.codegrepper.com noted in readme
+# https://stackoverflow.com/questions/24072790/how-to-detect-key-presses
+
+
+
+
 def welcome_screen():
     """
     This is the landing screen
@@ -33,26 +52,15 @@ def welcome_screen():
     print("Can you find words on our online Boggle board?")
     print("Get a high score to be added to the hall of fame")
     
-    #board_selection = ('A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', 'QU')
     
     user_name = input(" Enter username:")
     
-    print("Let's go " + USER_NAME + '!')
+    print("Let's go " + user_name + '!')
+    generate_board()
     
-    #grid = []
-    #for i in range(4):
-     #   grid.append(random.choices(board_selection, k=6))
-      #  print(grid[i])
-    #    words_entered = input("Enter your words here: ")
-   
-
-#attempts = 0
-#attempts = attempts + 1
-
-# code taken from www.codegrepper.com noted in readme
-# https://stackoverflow.com/questions/24072790/how-to-detect-key-presses
-
 welcome_screen()
+
+
 def end_game():
    
     # """
