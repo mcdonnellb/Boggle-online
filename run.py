@@ -13,10 +13,12 @@ CREDS = Credentials.from_service_account_file('creds.json')
 SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('boggle_online')
-attempts = 0 
+
 
 high_score = SHEET.worksheet('scores')
 high_score_data = high_score.get_all_values()
+print(high_score_data)
+
 
 
 def welcome_screen():
@@ -30,22 +32,27 @@ def welcome_screen():
     print(constants.WELCOME2)
     print("Can you find words on our online Boggle board?")
     print("Get a high score to be added to the hall of fame")
-    board_selection = ('A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', 'QU')
-    USER_NAME = input(" Enter username:")
-    attempts = 0
+    
+    #board_selection = ('A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', 'QU')
+    
+    user_name = input(" Enter username:")
+    
     print("Let's go " + USER_NAME + '!')
-    grid = []
-    for i in range(4):
-        grid.append(random.choices(board_selection, k=6))
-        print(grid[i])
+    
+    #grid = []
+    #for i in range(4):
+     #   grid.append(random.choices(board_selection, k=6))
+      #  print(grid[i])
     #    words_entered = input("Enter your words here: ")
    
-attempts = 0
-attempts = attempts + 1
+
+#attempts = 0
+#attempts = attempts + 1
 
 # code taken from www.codegrepper.com noted in readme
 # https://stackoverflow.com/questions/24072790/how-to-detect-key-presses
 
+welcome_screen()
 def end_game():
    
     # """
