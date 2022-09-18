@@ -1,7 +1,7 @@
+import random
 import gspread
 from google.oauth2.service_account import Credentials
-import random
-import constants 
+import constants
 
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
@@ -19,26 +19,21 @@ high_score = SHEET.worksheet('scores')
 high_score_data = high_score.get_all_values()
 print(high_score_data)
 
+def get_random_choice():
+    return random.choices(board_selection)
 
 
 def generate_board():
     board_selection = ('A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', 'QU')
     grid = []
+    
     for i in range(8):
         grid.append(random.choices(board_selection, k=8))
         print(grid[i])
-        game_in_play()
-        def game_in_play():
-         while gane_in_play is true: 
-           words_entered = input("Enter your words here: ")
-attempts = 0
-attempts = attempts + 1
+    words_entered = input("Enter your words here: ")
 
 # code taken from www.codegrepper.com noted in readme
 # https://stackoverflow.com/questions/24072790/how-to-detect-key-presses
-
-
-
 
 def welcome_screen():
     """
@@ -51,14 +46,11 @@ def welcome_screen():
     print(constants.WELCOME2)
     print("Can you find words on our online Boggle board?")
     print("Get a high score to be added to the hall of fame")
-    
-    
     user_name = input(" Enter username:")
-    
     print("Let's go " + user_name + '!')
     generate_board()
-    
 welcome_screen()
+show_menu()
 
 
 def end_game():
@@ -83,10 +75,8 @@ def end_game():
         print("Calculating your points....")
         #check_if_high_score()
         print("Checking to see if you have reached a high score")
-
-
-def get_random_choice():
-    return random.choices(board_selection)
+        #points_calculation(()))
+        #print(score)
 
 
 # function to calculate the points achieved in the course of the game
@@ -106,13 +96,13 @@ def points_calculation(words_entered):
 
 def check_if_high_score(score):
     if score > 10:
-            current_scores = SHEET.worksheet("scores").get_all_values()
-            print(f"Updating {worksheet} worksheet...\n")
-            worksheet_to_update = SHEET.worksheet(scores)
-            worksheet_to_update.append_row(data)
-            update_worksheet(high_score_data, "scores")
-            print(f"{worksheet} ScoreBoard updated successfully\n")
-            print(high_score_data)
+        current_score = SHEET.worksheet("scores").get_all_values()
+        print(f"Updating {SHEET} worksheet...\n")
+        worksheet_to_update = SHEET.worksheet(scores)
+        worksheet_to_update.append_row(data)
+        update_worksheet(high_score_data, "scores")
+        print(f"{worksheet} ScoreBoard updated successfully\n")
+        print(high_score_data)
 
 
 def show_menu():
@@ -140,7 +130,6 @@ def error_in_selection():
     user should only be able to select H, S or E
     for Menu to function
     """
-    show_banner_screen()
     print(constants.INPUT_ERROR)
     print(constants.INPUT_ERROR2)
     print(constants.INPUT_ERROR3)
