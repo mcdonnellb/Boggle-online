@@ -79,7 +79,7 @@ def end_game():
         print(constants.TIME_IS_UP1)
         print(constants.TIME_IS_UP2)
         print(constants.TIME_IS_UP3)
-        #points_calculation()
+        points_calculation()
         print("Calculating your points....")
         #check_if_high_score()
         print("Checking to see if you have reached a high score")
@@ -139,7 +139,6 @@ def welcome_screen():
     run and will be the main
     page for nav purposes
     """
-
     print(constants.WELCOME1)
     print(constants.WELCOME2)
     print("Can you find words on our online Boggle board?")
@@ -148,8 +147,14 @@ def welcome_screen():
     print("++++ || For Scoreboard please hit the S Key|| ++++")
     print("++++ || To start a game hit Enter Key      || ++++")
     player_selection = input("Please select Option H, S or Enter: \n")
-    user_name = input(" Enter username:")
-    print("Let's go " + user_name + '!')
-    generate_board()
+    if input("Enter 'YES' to play again. "
+             "Enter any other key to exit the game: "
+             ).upper() == 'YES':
+        user_name = input(" Enter username:")
+        print("Let's go " + user_name + '!')   
+        generate_board()
+        
+    else:
+        print("Returning you to the Menu")
     end_game()
 welcome_screen()
