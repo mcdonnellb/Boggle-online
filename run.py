@@ -17,7 +17,7 @@ SHEET = GSPREAD_CLIENT.open('boggle_online')
 
 high_score = SHEET.worksheet('scores')
 high_score_data = high_score.get_all_values()
-print(high_score_data)
+
 
 def get_random_choice():
     return random.choices(board_selection)
@@ -115,7 +115,6 @@ while True:
         current_score = SHEET.worksheet("scores").get_all_values()
         print(f"Updating {SHEET} worksheet...\n")
         worksheet_to_update = SHEET.worksheet("scores")
-        worksheet_to_update.append_row(data)
         update_worksheet(high_score_data, "scores")
         print(f"{worksheet} ScoreBoard updated successfully\n")
         print(high_score_data)
@@ -145,8 +144,10 @@ def error_in_selection():
     user should only be able to select H, S or E
     for Menu to function
     """
-    print(constants.INPUT_ERROR)
-    print(constants.INPUT_ERROR2)
-    print(constants.INPUT_ERROR3)
-    print("++++ || You hit the wrong key        || ++++")
     
+    while True:
+        print(constants.INPUT_ERROR)
+        print(constants.INPUT_ERROR2)
+        print(constants.INPUT_ERROR3)
+        print("++++ || You hit the wrong key        || ++++")
+        
