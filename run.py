@@ -57,26 +57,7 @@ def generate_board():
 # https://stackoverflow.com/questions/24072790/how-to-detect-key-presses
 
 
-def welcome_screen():
-    """
-    This is the landing screen
-    when the program is first
-    run and will be the main
-    page for nav purposes
-    """
 
-    print(constants.WELCOME1)
-    print(constants.WELCOME2)
-    print("Can you find words on our online Boggle board?")
-    print("Get a high score to be added to the hall of fame")
-    print("++++ || For Help please hit the H Key      || ++++")
-    print("++++ || For Scoreboard please hit the S Key|| ++++")
-    print("++++ || To start a game hit Enter Key      || ++++")
-    player_selection = input("Please select Option H, S or Enter: \n")
-    user_name = input(" Enter username:")
-    print("Let's go " + user_name + '!')
-    generate_board()
-welcome_screen()
 
 
 
@@ -94,7 +75,7 @@ def end_game():
     # which will then be pushed 
     # to the google sheet
     #"""
-    if attempts >= 10:
+    
         print(constants.TIME_IS_UP1)
         print(constants.TIME_IS_UP2)
         print(constants.TIME_IS_UP3)
@@ -111,13 +92,12 @@ def update_worksheet(data, worksheet):
      """
     This function checks the score on the spreadsheet and if current score is higher updates the values 
     """
-while True:
-        current_score = SHEET.worksheet("scores").get_all_values()
-        print(f"Updating {SHEET} worksheet...\n")
-        worksheet_to_update = SHEET.worksheet("scores")
-        update_worksheet(high_score_data, "scores")
-        print(f"{worksheet} ScoreBoard updated successfully\n")
-        print(high_score_data)
+current_score = SHEET.worksheet("scores").get_all_values()
+print(f"Updating {SHEET} worksheet...\n")
+worksheet_to_update = SHEET.worksheet("scores")
+update_worksheet(high_score_data, "scores")
+print(f"ScoreBoard updated successfully\n")
+print(high_score_data)
 
 def show_menu():
 
@@ -151,3 +131,25 @@ def error_in_selection():
         print(constants.INPUT_ERROR3)
         print("++++ || You hit the wrong key        || ++++")
         
+
+def welcome_screen():
+    """
+    This is the landing screen
+    when the program is first
+    run and will be the main
+    page for nav purposes
+    """
+
+    print(constants.WELCOME1)
+    print(constants.WELCOME2)
+    print("Can you find words on our online Boggle board?")
+    print("Get a high score to be added to the hall of fame")
+    print("++++ || For Help please hit the H Key      || ++++")
+    print("++++ || For Scoreboard please hit the S Key|| ++++")
+    print("++++ || To start a game hit Enter Key      || ++++")
+    player_selection = input("Please select Option H, S or Enter: \n")
+    user_name = input(" Enter username:")
+    print("Let's go " + user_name + '!')
+    generate_board()
+    end_game()
+welcome_screen()
