@@ -49,7 +49,7 @@ def generate_board():
         print(grid[i])
     words_entered = input("Enter your words here: ")
     guess_list = words_entered.split(",")
-    print("Here are the words you found" + guess_list)
+    print("Here are the words you found", guess_list)
     return guess_list 
 
 
