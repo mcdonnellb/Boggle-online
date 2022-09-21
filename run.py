@@ -22,43 +22,40 @@ high_score_data = high_score.get_all_values()
 def get_random_choice():
     return random.choices(board_selection)
 # function to calculate the points achieved in the course of the game
-def points_calculation(words_entered):
-    if len(words_entered) == 3:
-        return 1
-        print("your score is 1")
-    if len(words_entered) == 5:
-        return 2
-        print("your score is 2")
-    if len(words_entered) == 6:
-        return 3
-    if len(words_entered) == 7:
-        return 11
-    if len(words_entered) >= 8:
-        return 11
-    return 0
+#def points_calculation():
+ #   if len(guesses) == 3:
+  #      return 1
+   #     print("your score is 1")
+    #if len(guesses) == 5:
+     #   return 2
+      #  print("your score is 2")
+    #if len(guesses) == 6:
+     #   return 3
+    #if len(guesses) == 7:
+     #   return 11
+    #if len(guesses) >= 8:
+     #   return 11
+    #return 0
 
-
+def getEntries():
+    return (guesses.append(guess_list))
 
 def generate_board():
     board_selection = ('A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', 'QU')
     grid = []
     guesses = []
+    score = 0 
     
     for i in range(8):
         grid.append(random.choices(board_selection, k=8))
         print(grid[i])
     words_entered = input("Enter your words here: ")
     guess_list = words_entered.split(",")
+    guesses.append(words_entered)
     print("Here are the words you found", guess_list)
     return guess_list 
-
-
 # code taken from www.codegrepper.com noted in readme
 # https://stackoverflow.com/questions/24072790/how-to-detect-key-presses
-
-
-
-
 
 
 def end_game():
@@ -79,12 +76,12 @@ def end_game():
         print(constants.TIME_IS_UP1)
         print(constants.TIME_IS_UP2)
         print(constants.TIME_IS_UP3)
-        points_calculation()
+       # points_calculation()
         print("Calculating your points....")
         #check_if_high_score()
         print("Checking to see if you have reached a high score")
         #points_calculation(()))
-        #print(score)
+        print(score)
 
 
 
@@ -115,7 +112,7 @@ def show_menu():
     print("++++ || For Help please hit the H Key      || ++++")
     print("++++ || For Scoreboard please hit the S Key|| ++++")
     print("++++ || To start a game hit Enter Key      || ++++")
-    player_selection = input("Please select Option H, S or Enter: \n")
+    player_selection = input("Please select Option H, S or YES: \n")
 
 
 def error_in_selection():
@@ -145,16 +142,17 @@ def welcome_screen():
     print("Get a high score to be added to the hall of fame")
     print("++++ || For Help please hit the H Key      || ++++")
     print("++++ || For Scoreboard please hit the S Key|| ++++")
-    print("++++ || To start a game hit Enter Key      || ++++")
-    player_selection = input("Please select Option H, S or Enter: \n")
-    if input("Enter 'YES' to play again. "
+    print("++++ || To start a game hit YES            || ++++")
+    player_selection = input("Please select Option H, S or YES: \n")
+    if input("Enter 'YES' to start a game. "
              "Enter any other key to exit the game: "
              ).upper() == 'YES':
         user_name = input(" Enter username:")
         print("Let's go " + user_name + '!')   
         generate_board()
+        end_game()
         
     else:
         print("Returning you to the Menu")
-    end_game()
+        show_menu()
 welcome_screen()
