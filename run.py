@@ -114,10 +114,10 @@ def welcome_screen():
     user_selection = input("Enter 'YES' to start a game. "
              "Enter S for High Scores, H for Help Menu or any other letter key to exit the game: "
              )
+    if not re.match("^[A-Z]*$", user_selection):
+        print ("Error! Only  a-z selection allowed!")
     if user_selection .upper() == 'YES' or user_selection .upper() == 'Y':
-        if not re.match("^[a-z]*$", user_selection):
-           print ("Error! Only  a-z selection allowed!")
-           user_name = input(" Enter username:")
+        user_name = input(" Enter username:")
         if not re.match("^[a-z]*$", user_name):
            print ("Error! Only letters a-z allowed!")
         user_name = input(" Try again-  Enter username:")
@@ -129,7 +129,6 @@ def welcome_screen():
          print("++++ || The aim of the game is simple                                                                        || ++++")
          print("++++ || To find as many words as you can in the grid                                                         || ++++")
          print("++++ || Can you find words upside down, diagnolly, hoirzontally? Let's kick that brain into action!          || ++++") 
-            
     elif user_selection .upper() == 'S':
         print(constants.SCOREBOARD)
         print("++++ || Welcome to the High Score page                                                                  || ++++")
@@ -138,10 +137,9 @@ def welcome_screen():
         high_score = SHEET.worksheet('scores')
         high_score_data = high_score.get_all_values()
         print(high_score_data) 
-     
     else:
         print("You're not ready to play Boggle yet")  
         print("Returning you to the MAIN Menu") 
-        welcome_screen()
+
 
 welcome_screen()
