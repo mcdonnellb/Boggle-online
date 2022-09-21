@@ -112,31 +112,36 @@ def welcome_screen():
     print("++++ || Created by Bee in 2022                   || ++++")
     print("++++ || To reimagine the 90's classic            || ++++")
     user_selection = input("Enter 'YES' to start a game. "
-             "Enter any other key to exit the game: "
+             "Enter S for High Scores, H for Help Menu or any other letter key to exit the game: "
              )
-    if user_selection .upper() == 'YES'or user_selection .upper() == 'Y':
-       user_name = input(" Enter username:")
-       if not re.match("^[a-z]*$", user_name):
-          print ("Error! Only letters a-z allowed!")
-       user_name = input(" Try again-  Enter username:")
-       print("Let's go " + user_name + '!')   
-       generate_board()
-       end_game()
+    if user_selection .upper() == 'YES' or user_selection .upper() == 'Y':
+        if not re.match("^[a-z]*$", user_selection):
+           print ("Error! Only  a-z selection allowed!")
+           user_name = input(" Enter username:")
+        if not re.match("^[a-z]*$", user_name):
+           print ("Error! Only letters a-z allowed!")
+        user_name = input(" Try again-  Enter username:")
+        print("Let's go " + user_name + '!')   
+        generate_board()
+        end_game()
     elif user_selection .upper() == 'H':
          print("++++ || Welcome to the Help page                                                                             || ++++")
          print("++++ || The aim of the game is simple                                                                        || ++++")
          print("++++ || To find as many words as you can in the grid                                                         || ++++")
          print("++++ || Can you find words upside down, diagnolly, hoirzontally? Let's kick that brain into action!          || ++++") 
+            
     elif user_selection .upper() == 'S':
-         print("++++ || Welcome to the High Score page                                                                  || ++++")
-         print("++++ || The Boggle Hall of fame                                                                         || ++++")
-         print("++++ || Do you have what it takes to beat our superstars?                                               || ++++")
-         high_score = SHEET.worksheet('scores')
-         high_score_data = high_score.get_all_values()
-         print(high_score_data)      
+        print(constants.SCOREBOARD)
+        print("++++ || Welcome to the High Score page                                                                  || ++++")
+        print("++++ || The Boggle Hall of fame                                                                         || ++++")
+        print("++++ || Do you have what it takes to beat our superstars?                                               || ++++")
+        high_score = SHEET.worksheet('scores')
+        high_score_data = high_score.get_all_values()
+        print(high_score_data) 
+     
     else:
         print("You're not ready to play Boggle yet")  
         print("Returning you to the MAIN Menu") 
-        show_menu()   
+        welcome_screen()
 
 welcome_screen()
