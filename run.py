@@ -152,7 +152,15 @@ def welcome_screen():
         generate_board()
         end_game()
         
+    else if input("Enter 'YES' to start a game. "
+             "Enter any other key to exit the game: "
+             ).upper() == 'H':
+        print("Welcome to the Help page" , username)
+        print("The aim of the game is simple")
+        print("Find as many words as you can in the grid")    
+         show_menu()
     else:
-        print("Returning you to the Menu")
+        print("You're not ready to play Boggle yet")  
+        print("Returning you to the Menu")    
         show_menu()
 welcome_screen()
