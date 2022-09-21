@@ -2,6 +2,8 @@ import random
 import gspread
 from google.oauth2.service_account import Credentials
 import constants
+import re
+import sys
 
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
@@ -21,21 +23,8 @@ high_score_data = high_score.get_all_values()
 
 def get_random_choice():
     return random.choices(board_selection)
-# function to calculate the points achieved in the course of the game
-#def points_calculation():
- #   if len(guesses) == 3:
-  #      return 1
-   #     print("your score is 1")
-    #if len(guesses) == 5:
-     #   return 2
-      #  print("your score is 2")
-    #if len(guesses) == 6:
-     #   return 3
-    #if len(guesses) == 7:
-     #   return 11
-    #if len(guesses) >= 8:
-     #   return 11
-    #return 0
+
+    
 
 def getEntries():
     return (guesses.append(guess_list))
@@ -76,12 +65,11 @@ def end_game():
         print(constants.TIME_IS_UP1)
         print(constants.TIME_IS_UP2)
         print(constants.TIME_IS_UP3)
-       # points_calculation()
         print("Calculating your points....")
-        #check_if_high_score()
         print("Checking to see if you have reached a high score")
-        #points_calculation(()))
-        print(score)
+        print("Are you brave enough to try again")
+        show_menu()
+     
 
 
 
@@ -120,14 +108,12 @@ def error_in_selection():
     This is to simplify code for selection error.
     user should only be able to select H, S or E
     for Menu to function
-    """
-    
-    while True:
-        print(constants.INPUT_ERROR)
-        print(constants.INPUT_ERROR2)
-        print(constants.INPUT_ERROR3)
-        print("++++ || You hit the wrong key        || ++++")
-        
+        """
+    print(constants.INPUT_ERROR)
+    print(constants.INPUT_ERROR2)
+    print(constants.INPUT_ERROR3)
+    print("++++ || You hit the wrong key        || ++++")
+            
 
 def welcome_screen():
     """
@@ -140,27 +126,29 @@ def welcome_screen():
     print(constants.WELCOME2)
     print("Can you find words on our online Boggle board?")
     print("Get a high score to be added to the hall of fame")
-    print("++++ || For Help please hit the H Key      || ++++")
-    print("++++ || For Scoreboard please hit the S Key|| ++++")
-    print("++++ || To start a game hit YES            || ++++")
-    player_selection = input("Please select Option H, S or YES: \n")
-    if input("Enter 'YES' to start a game. "
+    print("++++ || Welcome to Boggle online                 || ++++")
+    print("++++ || Created by Bee in 2022                   || ++++")
+    print("++++ || To reimagine the 90's classic            || ++++")
+    user_selection = input("Enter 'YES' to start a game. "
              "Enter any other key to exit the game: "
-             ).upper() == 'YES':
-        user_name = input(" Enter username:")
-        print("Let's go " + user_name + '!')   
-        generate_board()
-        end_game()
-        
-    else if input("Enter 'YES' to start a game. "
-             "Enter any other key to exit the game: "
-             ).upper() == 'H':
-        print("Welcome to the Help page" , username)
-        print("The aim of the game is simple")
-        print("Find as many words as you can in the grid")    
-         show_menu()
+             )
+    if user_selection .upper() == 'YES'or user_selection .upper() == 'Y':
+       user_name = input(" Enter username:")
+       if not re.match("^[a-z]*$", user_name):
+          print ("Error! Only letters a-z allowed!")
+       user_name = input(" Try again-  Enter username:")
+       print("Let's go " + user_name + '!')   
+       generate_board()
+       end_game()
+    elif user_selection .upper() == 'H':
+         print("++++ || Welcome to the Help page                                                                             || ++++")
+         print("++++ || The aim of the game is simple                                                                        || ++++")
+         print("++++ || To find as many words as you can in the grid                                                         || ++++")
+         print("++++ || Can you find words upside down, diagnolly, hoirzontally? Let's kick that brain into action!          || ++++")
+         show_menu()    
     else:
         print("You're not ready to play Boggle yet")  
-        print("Returning you to the Menu")    
-        show_menu()
+        print("Returning you to the MAIN Menu") 
+        show_menu()   
+
 welcome_screen()
