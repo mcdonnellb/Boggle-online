@@ -68,7 +68,7 @@ def end_game():
         print("Calculating your points....")
         print("Checking to see if you have reached a high score")
         print("Are you brave enough to try again")
-        show_menu()
+        welcome_screen()
      
 
 
@@ -83,24 +83,6 @@ worksheet_to_update = SHEET.worksheet("scores")
 update_worksheet(high_score_data, "scores")
 print(f"ScoreBoard updated successfully\n")
 print(high_score_data)
-
-def show_menu():
-
-    """
-    This function is to
-    ensure consistency
-    thrughout the game
-    with the menu items
-    visible throughout workflow
-    in critical screens to ensure
-    positive UX experience
-    """
-    print(constants.WELCOME1)
-    print(constants.WELCOME2)
-    print("++++ || For Help please hit the H Key      || ++++")
-    print("++++ || For Scoreboard please hit the S Key|| ++++")
-    print("++++ || To start a game hit Enter Key      || ++++")
-    player_selection = input("Please select Option H, S or YES: \n")
 
 
 def error_in_selection():
@@ -144,8 +126,14 @@ def welcome_screen():
          print("++++ || Welcome to the Help page                                                                             || ++++")
          print("++++ || The aim of the game is simple                                                                        || ++++")
          print("++++ || To find as many words as you can in the grid                                                         || ++++")
-         print("++++ || Can you find words upside down, diagnolly, hoirzontally? Let's kick that brain into action!          || ++++")
-         show_menu()    
+         print("++++ || Can you find words upside down, diagnolly, hoirzontally? Let's kick that brain into action!          || ++++") 
+    elif user_selection .upper() == 'S':
+         print("++++ || Welcome to the High Score page                                                                  || ++++")
+         print("++++ || The Boggle Hall of fame                                                                         || ++++")
+         print("++++ || Do you have what it takes to beat our superstars?                                               || ++++")
+         high_score = SHEET.worksheet('scores')
+         high_score_data = high_score.get_all_values()
+         print(high_score_data)      
     else:
         print("You're not ready to play Boggle yet")  
         print("Returning you to the MAIN Menu") 
