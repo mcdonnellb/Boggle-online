@@ -94,7 +94,7 @@ As part of Project 3 - python Computer Program Development, the following items 
 - The program will add this score and name to the High Score Array, if it is indeed a high score.
 - The user will be presented with the end game screen. 
 
-![Game Workflow](/workspace/Boggle-online/documentation/images/python_workflow_thought_process.jpg)
+![Game Workflow](https://github.com/mcdonnellb/Boggle-online/blob/165a49d706b5e3310e4a07dbad58889e0a6444e1/documentation/images/python_workflow_thought_process.jpg)
 
 ![Game Workflow- Welcome Screen](https://github.com/mcdonnellb/Boggle-online/blob/e25f47b9b5e654ed682df9471fb5bac1296a1e72/documentation/images/welcomescreen.jpg)
 ![Game Workflow- Help Screen](https://github.com/mcdonnellb/Boggle-online/blob/e25f47b9b5e654ed682df9471fb5bac1296a1e72/documentation/images/HelpScreen.jpg)
@@ -151,7 +151,7 @@ I have manually tested my project by completing the folling steps:
 * Tested in both my local terminal and the Code Institute Heroku Terminal to ensure testing is thorough.
 
 
-![PEP8 validation](/workspace/Boggle-online/documentation/images/python_workflow_thought_process.jpg)
+![PEP8 validation](https://github.com/mcdonnellb/Boggle-online/blob/165a49d706b5e3310e4a07dbad58889e0a6444e1/documentation/images/final_pep8_validation_check.jpg)
 
 ## Error Log 
 The below  are issues I encountered over the course of this Python computer program development:

@@ -20,10 +20,6 @@ high_score = SHEET.worksheet('scores')
 high_score_data = high_score.get_all_values()
 
 
-def get_random_choice():
-    return random.choices(board_selection)
-
-
 def generate_board():
     board_selection = ('A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I',
                        'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R',
@@ -38,10 +34,10 @@ def generate_board():
         print(grid[i])
     words_entered = input("Enter your words with a space in between: ")
     if not re.match("^[a-z , ]*$", words_entered):
-        print ("Error! Only  a-z selection allowed!")
+        print("Error! Only  a-z selection allowed!")
         words_entered = input("Try again - Enter your words here: ")
     if not re.match("^[a-z , ]*$", words_entered):
-        print ("Please go back and read the instructions")
+        print("Please go back and read the instructions")
     guess_list = words_entered.split(",")
     guesses.append(words_entered)
     print("Here are the words you found", guess_list)
@@ -50,6 +46,9 @@ def generate_board():
 # code taken from www.codegrepper.com noted in readme
 # https://stackoverflow.com/questions/24072790/how-to-detect-key-presses
 
+
+def get_random_choice():
+    return random.choices(board_selection)
 
 def end_game():
     """
@@ -83,7 +82,7 @@ def main_menu():
                            "any UPPER letter to exit the game: "
                            )
     if not re.match("^[A-Z]*$", user_selection):
-        print ("Error! Only  a-z selection allowed!")
+        print("Error! Only  a-z selection allowed!")
         user_selection = input(" \n TRY AGAIN -Enter 'YES' to start a game. "
                                "Enter S for High Scores, H for Help or "
                                " other UPPER letter to exit the game:\n "
@@ -130,4 +129,6 @@ def welcome_screen():
     print("++++ || Created by Bee in 2022                   || ++++")
     print("++++ || To reimagine the 90's classic            || ++++")
     main_menu()
+
+
 welcome_screen()
