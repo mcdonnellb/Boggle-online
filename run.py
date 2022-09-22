@@ -33,14 +33,15 @@ def generate_board():
     for i in range(8):
         grid.append(random.choices(board_selection, k=8))
         print(grid[i])
-    words_entered = input("Enter your words here: ")
-
+    while True:
+        words_entered = input("Enter your words here with a space in between each: ")
     if not re.match("^[a-z]*$", words_entered):
        print ("Error! Only  a-z selection allowed!")
        words_entered = input("Try again - Enter your words here: ")
     guess_list = words_entered.split(",")
     guesses.append(words_entered)
     print("Here are the words you found", guess_list)
+    print(len(guess_list))
     return guess_list 
 # code taken from www.codegrepper.com noted in readme
 # https://stackoverflow.com/questions/24072790/how-to-detect-key-presses
@@ -67,6 +68,7 @@ def end_game():
         print("Calculating your points....")
         print("Checking to see if you have reached a high score")
         print("Are you brave enough to try again")
+        welcome_screen()
      
 
 
@@ -90,7 +92,7 @@ def main_menu():
     if not re.match("^[A-Z]*$", user_selection):
        print ("Error! Only  a-z selection allowed!")
        user_selection = input(" TRY AGAIN -Enter 'YES' to start a game. "
-             "Enter S for High Scores, H for Help Menu or any other letter key to exit the game: "
+             "Enter S for High Scores, H for Help Menu or any other UPPER letter to exit the game: "
              )
     if user_selection .upper() == 'YES' or user_selection .upper() == 'Y':
        user_name = input(" Enter username:")
@@ -112,7 +114,8 @@ def main_menu():
         print(high_score_data) 
     else:
         print("Thank you")  
-        print("Please try again") 
+        print("You have opted to exit") 
+        sys.exit()
 
 
 
