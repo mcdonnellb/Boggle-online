@@ -50,26 +50,26 @@ def generate_board():
 
 def end_game():
    
-    # """
-    # This function is to 
-    # end the game, show the end game 
-    # graphics and call the crucial
-    # functions which determine
-    # if words entered are valid
-    # and if so the score
-    # This will also determine if 
-    # user has high score
-    # which will then be pushed 
-    # to the google sheet
-    #"""
+    """
+    This function is to 
+    end the game, show the end game 
+    graphics and call the crucial
+    functions which determine
+    if words entered are valid
+    and if so the score
+    This will also determine if 
+     user has high score
+    which will then be pushed 
+    to the google sheet
+    """
     
-        print(constants.TIME_IS_UP1)
-        print(constants.TIME_IS_UP2)
-        print(constants.TIME_IS_UP3)
-        print("Calculating your points....")
-        print("Checking to see if you have reached a high score")
-        print("Are you brave enough to try again")
-        welcome_screen()
+    print(constants.TIME_IS_UP1)
+    print(constants.TIME_IS_UP2)
+    print(constants.TIME_IS_UP3)
+    print("Calculating your points....")
+    print("Checking to see if you have reached a high score")
+    print("Are you brave enough to try again")
+    welcome_screen()
 
 
             
@@ -104,7 +104,6 @@ def main_menu():
         print("Thank you")  
         print("You have opted to exit") 
         sys.exit()
-
 
 
 def welcome_screen():
