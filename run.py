@@ -40,7 +40,7 @@ def generate_board():
     guess_list = words_entered.split(",")
     guesses.append(words_entered)
     print("Here are the words you found", guess_list)
-    print(len(guess_list))
+    print(len(words_entered))
     return guess_list 
 # code taken from www.codegrepper.com noted in readme
 # https://stackoverflow.com/questions/24072790/how-to-detect-key-presses
@@ -68,15 +68,12 @@ def end_game():
         print("Checking to see if you have reached a high score")
         print("Are you brave enough to try again")
         welcome_screen()
-     
-
-
 
 
             
 def main_menu():
     user_selection = input("Enter 'YES' to start a game. "
-             "Enter S for High Scores, H for Help Menu or any other letter key to exit the game: "
+             "Enter S for High Scores, H for Help Menu or any other UPPER letter to exit the game: "
              )
     if not re.match("^[A-Z]*$", user_selection):
        print ("Error! Only  a-z selection allowed!")
@@ -100,12 +97,11 @@ def main_menu():
         print("++++ || Do you have what it takes to beat our superstars?                                               || ++++")
         high_score = SHEET.worksheet('scores')
         high_score_data = high_score.get_all_values()
-        print(high_score_data) 
+        print(high_score_data)     
     else:
         print("Thank you")  
         print("You have opted to exit") 
         sys.exit()
-
 
 
 
