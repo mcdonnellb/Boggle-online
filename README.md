@@ -94,8 +94,8 @@ As part of Project 3 - python Computer Program Development, the following items 
 ![Game Workflow](https://github.com/mcdonnellb/Boggle-online/blob/165a49d706b5e3310e4a07dbad58889e0a6444e1/documentation/images/python_workflow_thought_process.jpg)
 
 ![Game Workflow- Welcome Screen](https://github.com/mcdonnellb/Boggle-online/blob/e25f47b9b5e654ed682df9471fb5bac1296a1e72/documentation/images/welcomescreen.jpg)
-![Game Workflow- Help Screen](https://github.com/mcdonnellb/Boggle-online/blob/e25f47b9b5e654ed682df9471fb5bac1296a1e72/documentation/images/HelpScreen.jpg)
 ![Game Workflow- High Score Screen](https://github.com/mcdonnellb/Boggle-online/blob/e25f47b9b5e654ed682df9471fb5bac1296a1e72/documentation/images/high_scores.jpg)
+![Game Workflow- Help Screen](https://github.com/mcdonnellb/Boggle-online/blob/5ef72371d98c3870fe4e27dcfd380c0d0f2ef2bd/documentation/images/HelpScreen.jpg)
 ![Game Workflow- Game Started](https://github.com/mcdonnellb/Boggle-online/blob/e25f47b9b5e654ed682df9471fb5bac1296a1e72/documentation/images/Name_entered_board_generated.jpg)
 ![Game Workflow- Simple Validation](https://github.com/mcdonnellb/Boggle-online/blob/e25f47b9b5e654ed682df9471fb5bac1296a1e72/documentation/images/simple_validation.jpg)
 
