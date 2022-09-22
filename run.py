@@ -16,7 +16,6 @@ SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('boggle_online')
 
-
 high_score = SHEET.worksheet('scores')
 high_score_data = high_score.get_all_values()
 
@@ -24,10 +23,6 @@ high_score_data = high_score.get_all_values()
 def get_random_choice():
     return random.choices(board_selection)
 
-    
-
-def getEntries():
-    return (guesses.append(guess_list))
 
 def generate_board():
     board_selection = ('A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', 'QU')
@@ -39,6 +34,10 @@ def generate_board():
         grid.append(random.choices(board_selection, k=8))
         print(grid[i])
     words_entered = input("Enter your words here: ")
+
+    if not re.match("^[a-z]*$", words_entered):
+       print ("Error! Only  a-z selection allowed!")
+       words_entered = input("Try again - Enter your words here: ")
     guess_list = words_entered.split(",")
     guesses.append(words_entered)
     print("Here are the words you found", guess_list)
@@ -68,21 +67,9 @@ def end_game():
         print("Calculating your points....")
         print("Checking to see if you have reached a high score")
         print("Are you brave enough to try again")
-        welcome_screen()
      
 
 
-
-def update_worksheet(data, worksheet):
-     """
-    This function checks the score on the spreadsheet and if current score is higher updates the values 
-    """
-current_score = SHEET.worksheet("scores").get_all_values()
-print(f"Updating {SHEET} worksheet...\n")
-worksheet_to_update = SHEET.worksheet("scores")
-update_worksheet(high_score_data, "scores")
-print(f"ScoreBoard updated successfully\n")
-print(high_score_data)
 
 
 def error_in_selection():
@@ -96,6 +83,39 @@ def error_in_selection():
     print(constants.INPUT_ERROR3)
     print("++++ || You hit the wrong key        || ++++")
             
+def main_menu():
+    user_selection = input("Enter 'YES' to start a game. "
+             "Enter S for High Scores, H for Help Menu or any other letter key to exit the game: "
+             )
+    if not re.match("^[A-Z]*$", user_selection):
+       print ("Error! Only  a-z selection allowed!")
+       user_selection = input(" TRY AGAIN -Enter 'YES' to start a game. "
+             "Enter S for High Scores, H for Help Menu or any other letter key to exit the game: "
+             )
+    if user_selection .upper() == 'YES' or user_selection .upper() == 'Y':
+       user_name = input(" Enter username:")
+       print("Let's go " + user_name + '!')   
+       generate_board()
+       end_game()
+    elif user_selection .upper() == 'H':
+         print("++++ || Welcome to the Help page                                                                             || ++++")
+         print("++++ || The aim of the game is simple                                                                        || ++++")
+         print("++++ || To find as many words as you can in the grid                                                         || ++++")
+         print("++++ || Can you find words upside down, diagnolly, hoirzontally? Let's kick that brain into action!          || ++++") 
+    elif user_selection .upper() == 'S':
+        print(constants.SCOREBOARD)
+        print("++++ || Welcome to the High Score page                                                                  || ++++")
+        print("++++ || The Boggle Hall of fame                                                                         || ++++")
+        print("++++ || Do you have what it takes to beat our superstars?                                               || ++++")
+        high_score = SHEET.worksheet('scores')
+        high_score_data = high_score.get_all_values()
+        print(high_score_data) 
+    else:
+        print("Thank you")  
+        print("Please try again") 
+
+
+
 
 def welcome_screen():
     """
@@ -111,35 +131,6 @@ def welcome_screen():
     print("++++ || Welcome to Boggle online                 || ++++")
     print("++++ || Created by Bee in 2022                   || ++++")
     print("++++ || To reimagine the 90's classic            || ++++")
-    user_selection = input("Enter 'YES' to start a game. "
-             "Enter S for High Scores, H for Help Menu or any other letter key to exit the game: "
-             )
-    if not re.match("^[A-Z]*$", user_selection):
-        print ("Error! Only  a-z selection allowed!")
-    if user_selection .upper() == 'YES' or user_selection .upper() == 'Y':
-        user_name = input(" Enter username:")
-        if not re.match("^[a-z]*$", user_name):
-           print ("Error! Only letters a-z allowed!")
-        user_name = input(" Try again-  Enter username:")
-        print("Let's go " + user_name + '!')   
-        generate_board()
-        end_game()
-    elif user_selection .upper() == 'H':
-         print("++++ || Welcome to the Help page                                                                             || ++++")
-         print("++++ || The aim of the game is simple                                                                        || ++++")
-         print("++++ || To find as many words as you can in the grid                                                         || ++++")
-         print("++++ || Can you find words upside down, diagnolly, hoirzontally? Let's kick that brain into action!          || ++++") 
-    elif user_selection .upper() == 'S':
-        print(constants.SCOREBOARD)
-        print("++++ || Welcome to the High Score page                                                                  || ++++")
-        print("++++ || The Boggle Hall of fame                                                                         || ++++")
-        print("++++ || Do you have what it takes to beat our superstars?                                               || ++++")
-        high_score = SHEET.worksheet('scores')
-        high_score_data = high_score.get_all_values()
-        print(high_score_data) 
-    else:
-        print("You're not ready to play Boggle yet")  
-        print("Returning you to the MAIN Menu") 
-
-
+    main_menu()
 welcome_screen()
+    
