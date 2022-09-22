@@ -33,8 +33,7 @@ def generate_board():
     for i in range(8):
         grid.append(random.choices(board_selection, k=8))
         print(grid[i])
-    while True:
-        words_entered = input("Enter your words here with a space in between each: ")
+    words_entered = input("Enter your words here with a space in between each: ")
     if not re.match("^[a-z]*$", words_entered):
        print ("Error! Only  a-z selection allowed!")
        words_entered = input("Try again - Enter your words here: ")
@@ -74,16 +73,6 @@ def end_game():
 
 
 
-def error_in_selection():
-    """
-    This is to simplify code for selection error.
-    user should only be able to select H, S or E
-    for Menu to function
-        """
-    print(constants.INPUT_ERROR)
-    print(constants.INPUT_ERROR2)
-    print(constants.INPUT_ERROR3)
-    print("++++ || You hit the wrong key        || ++++")
             
 def main_menu():
     user_selection = input("Enter 'YES' to start a game. "
