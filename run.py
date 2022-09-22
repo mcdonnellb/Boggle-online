@@ -34,9 +34,11 @@ def generate_board():
         grid.append(random.choices(board_selection, k=8))
         print(grid[i])
     words_entered = input("Enter your words here with a space in between each: ")
-    if not re.match("^[a-z]*$", words_entered):
-       print ("Error! Only  a-z selection allowed!")
-       words_entered = input("Try again - Enter your words here: ")
+    if not re.match("^[a-z , ]*$", words_entered):
+        print ("Error! Only  a-z selection allowed!")
+        words_entered = input("Try again - Enter your words here: ")
+    if not re.match("^[a-z , ]*$", words_entered):
+        print ("Please go back and read the instructions")
     guess_list = words_entered.split(",")
     guesses.append(words_entered)
     print("Here are the words you found", guess_list)
