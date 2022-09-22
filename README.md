@@ -83,16 +83,13 @@ As part of Project 3 - python Computer Program Development, the following items 
 
 ## Game Workflow
 - The user is presented with  a simple name input field
-- The user is then asked if they want Help H, New Game N, High Score H
+- The user is then asked if they want Help H, New Game YES or Y, High Score H
 - If the user hits H the game instructions populate the screen, with the options for High Score and New Game remaining.
-- If the user hits N the New Game Screen Displays - user must input their username which must contain 9 or less alphanumeric characters, special characters are not accepted.
-- When the User hits S for Start the board is presented to the screen with 4 x 4 grid containing letters
-- At this point the timer starts counting down from 1min 30 seconds
-- The user has this time to enter as many words as possible, they must contain at least 3 letters
-- The program will run the words entered by the user to confirm they are genuine words
-- The program will return the users score along with the username
-- The program will add this score and name to the High Score Array, if it is indeed a high score.
+- If the user hits N the New Game Screen Displays - user must input their username.
+- The board is presented to the screen with 8 x 8 grid containing letters
+- The user enters as many words as possible separated by a space in the input field
 - The user will be presented with the end game screen. 
+- Return to main menu
 
 ![Game Workflow](https://github.com/mcdonnellb/Boggle-online/blob/165a49d706b5e3310e4a07dbad58889e0a6444e1/documentation/images/python_workflow_thought_process.jpg)
 
@@ -118,7 +115,7 @@ I added the following options to allow a user know that their data is good:
 
 I added the following to let the user know they had entered bad data: 
 * Print Message outlining what the issue is and what is expected 
-* 
+* reprinting input to allow user to try again
 
 #### Development and Implementation
 
@@ -140,6 +137,7 @@ The project was deployed using the Code Institute terminal for Heroku. In order 
 
 #### Google API
 I took inspiration from the Love Sandwiches project and decided to use a similar apporach to my computer Program, using Google Sheets to store data/ add data/ query data.
+The only use this has at present is storing high scores and printing these out. This will be further developed in future iterations.
 
 
 #### Testing
@@ -162,29 +160,27 @@ The below  are issues I encountered over the course of this Python computer prog
 I added a new line character at the  end of the text inside the input method.  
 Without this extra line, the text for the import  request will not show up in the terminal.   
 * I got the initial gspread error when the code was deployed to Heroku which needed to be addressed with some additions to my requirements.txt file.
-* Timer was running independently so I needed to go back and check through my code, and I realised the function needed to be called after the characters were generated
+* Timer was running independently so I needed to go back and check through my code, and I realised the function needed to be called after the characters were generated. I eneded up having to remove this functionality as it ran independtly and blocked the screen - so prevented user from entering in words.
 * Boggle Board Grid was either displaying 16 random characters in one line, or a grid of 4x4 with the top line containing random characters, and the lines below repeating the same characters.
-* 
 
 
 
 ## Remaining Bugs 
 * Timer was not working so was removed - please ignore any references 
-
-* validation checks  was not working so was removed
-*  score check and dictionary check were not working so removed.
+* score check and dictionary check were not working so removed.
 
 
 ## Quirks
 * One quite obvious quirk is my Boggle Board having square brackets and commas still intact. This was something I hoped to remove but I actually think the square brackets help give the board a grid- like appearance.
 
 * The timer is hidden as I was unable to prevent this from overwriting the user input text. It still runs in the background, you just can't see it or see how much time is left which is a shame.
+* The game functionality is not there at present - you can enter in any words you like and they will be accepted.
 
 
 ## Future Development
-* This game is best suited as a multi-player game which would really enhance the user experience and emotional attachement to the game. This is something I plan on working on for future iterations.
-* I would definitley improve upon the game logic, only allowing a certain number of vowels, consonats and 1/2 Qu characters.
-* I would also add logic for the computer to calculate the amount of English words found on the board and then run a comparison to what the end user found.
+* I would definitley improve upon the game logic, only allowing a certain number of vowels, consonats and 1/2 Qu characters in the board generation.
+* The game logic would match the oringial game and only allow words that are connected in a row in the board. 
+* I would also add logic for the computer to calculate the amount of English words found on the board and then run a comparison to what the end user found to calculate the score.
 
 ## Validation Testing
 * PEP8 - as per below picture there were no errros retured from https://PEP8online.com  
@@ -232,3 +228,5 @@ I installed the following Modules for my project
 * GSPREAD -allow use of Google sheets api
 * Keyboard capture keyboard input
 * Random    to allow ease of creating boogle board random characters
+* import re  to alllow me to create a very basic regular expression / validation check
+* import sys - to allow sys exit option
