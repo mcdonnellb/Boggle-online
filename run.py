@@ -75,8 +75,8 @@ def end_game():
             
 def main_menu():
     user_selection = input("Enter 'YES' to start a game. "
-             "Enter S for High Scores, H for Help Menu or any other UPPER letter to exit the game: "
-             )
+    "Enter S for High Scores, H for Help Menu or any other UPPER letter to exit the game: "
+    )
     if not re.match("^[A-Z]*$", user_selection):
        print ("Error! Only  a-z selection allowed!")
        user_selection = input(" TRY AGAIN -Enter 'YES' to start a game. "
