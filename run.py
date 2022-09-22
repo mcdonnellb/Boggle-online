@@ -91,7 +91,8 @@ def main_menu():
          print("++++ || Welcome to the Help page                                                                             || ++++")
          print("++++ || The aim of the game is simple                                                                        || ++++")
          print("++++ || To find as many words as you can in the grid                                                         || ++++")
-         print("++++ || Can you find words upside down, diagnolly, hoirzontally? Let's kick that brain into action!          || ++++") 
+         print("++++ || Can you find words upside down, diagnolly, hoirzontally? Let's kick that brain into action!          || ++++")
+         welcome_screen() 
     elif user_selection .upper() == 'S':
         print(constants.SCOREBOARD)
         print("++++ || Welcome to the High Score page                                                                  || ++++")
@@ -99,7 +100,8 @@ def main_menu():
         print("++++ || Do you have what it takes to beat our superstars?                                               || ++++")
         high_score = SHEET.worksheet('scores')
         high_score_data = high_score.get_all_values()
-        print(high_score_data)     
+        print(high_score_data)
+        welcome_screen()
     else:
         print("Thank you")  
         print("You have opted to exit") 
